@@ -412,6 +412,8 @@
                 <h3 class="subsectores-h3">Subsectores/Prestadores</h3>
                 <p class="subsectores-intro">En el Perú, no existe un solo sistema de salud sino varios que funcionan en paralelo:</p>
 
+                <p class="niveles-hint" style="margin: 0 auto; display: block; text-align: center;">Selecciona <img src="./img/icon-click.png" alt="" width="15" aria-hidden="true"></p>
+
                 <div class="subsectores-grid">
                     <button class="subsector-btn js-subsector" data-subsector="0">
                         <div class="ss-icon"><img src="./img/icon-hospital.png" alt=""></div>
@@ -1234,11 +1236,11 @@
 
         ES_GROUPS.forEach((g, gi) => {
             const thresh  = gi / ES_GROUPS.length;
-            const colored = colorP >= thresh;
-            const lblVis  = labelP >= thresh * 0.55;
+            const colored = colorP > 0 && colorP >= thresh;
+            const lblVis  = colored && labelP > 0 && labelP >= thresh * 0.55;
 
             g.figs.forEach(f => f.el.classList.toggle('lit', colored));
-            esLblEls[gi].style.opacity = lblVis ? (colored ? '1' : '0.28') : '0';
+            esLblEls[gi].style.opacity = lblVis ? '1' : '0';
             esTrackDots[gi].classList.toggle('lit', colored);
         });
     }
@@ -1276,7 +1278,7 @@
             fig.el.style.transform  = `translate(${fig.ex}px,${fig.ey}px)`;
         });
 
-        esLblEls.forEach(l => { l.style.opacity = '0.3'; });
+        esLblEls.forEach(l => { l.style.opacity = '0'; });
 
         const sec = document.getElementById('esSection');
         const io  = new IntersectionObserver(entries => {
