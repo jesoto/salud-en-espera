@@ -1570,13 +1570,14 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 }
 
 .mapa-res-esp {
-    font: 2rem/1.1 'Isidora Bold', sans-serif;
+    font: 2rem/1.1 "ivypresto-headline";
+    font-weight: 700;
     margin-bottom: 6px;
 }
 
 .mapa-res-region {
-    color: #555;
-    font: 1rem/1 'Isidora Sans SemiBold', sans-serif;
+    font: 1rem/1 "ivypresto-headline";
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
@@ -1593,12 +1594,14 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 
 .mapa-res-dias {
     color: #E5553F;
-    font: 1.1rem/1 'Isidora Sans SemiBold', sans-serif;
+    font: 2.5rem/1 "ivypresto-headline";
+    font-weight: 700;
 }
 
 .mapa-res-dias span {
-    display: block;
-    font: 4.5rem/1 'Isidora Black', sans-serif;
+    /*display: block;*/
+    font: 2.5rem/1 "ivypresto-headline";
+    font-weight: 700;
     margin-bottom: 4px;
 }
 
