@@ -1457,6 +1457,160 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 }
 
 /* ══════════════════════════════════════════════════════
+   MAPA · TIEMPOS DE ATENCIÓN
+══════════════════════════════════════════════════════ */
+.mapa-section {
+    background: #fff;
+    padding: 60px 0 80px;
+}
+
+.mapa-inner {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 0 24px;
+}
+
+.mapa-titulo {
+    color: #E5553F;
+    font: 1.8rem/1.1 'Isidora Bold', sans-serif;
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+.mapa-filtros {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.mapa-filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 260px;
+}
+
+.mapa-label {
+    color: #888;
+    font: 0.78rem/1 'Isidora Sans SemiBold', sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.mapa-select {
+    appearance: none;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+    border: 1.5px solid #ddd;
+    border-radius: 40px;
+    color: #222;
+    cursor: pointer;
+    font: 1rem/1 'Isidora Sans SemiBold', sans-serif;
+    outline: none;
+    padding: 14px 40px 14px 20px;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.mapa-select:focus { border-color: #E5553F; }
+.mapa-select:disabled { color: #aaa; cursor: default; }
+
+.mapa-layout {
+    align-items: flex-start;
+    display: flex;
+    gap: 32px;
+}
+
+.mapa-svg-wrap {
+    flex: 0 0 65%;
+}
+
+.mapa-svg-wrap svg {
+    display: block;
+    height: 780px;
+    width: 100%;
+}
+
+.mapa-svg-wrap svg path {
+    cursor: default;
+    fill: #e8e4de;
+    stroke: #fff;
+    stroke-width: 1.5;
+    transition: fill 0.25s ease;
+}
+
+.mapa-svg-wrap svg path.mapa-clickable {
+    cursor: pointer;
+    fill: #dedad4;
+}
+
+.mapa-svg-wrap svg path.mapa-clickable:hover {
+    fill: #d0c8c0;
+}
+
+.mapa-svg-wrap svg path.mapa-activa,
+.mapa-svg-wrap svg path.mapa-activa:hover {
+    cursor: pointer;
+    fill: #E5553F;
+}
+
+.mapa-resultado {
+    flex: 1;
+    padding-top: 20px;
+}
+
+.mapa-placeholder {
+    color: #aaa;
+    font: 1rem/1.6 'Isidora Sans SemiBold', sans-serif;
+}
+
+.mapa-placeholder--small {
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+.mapa-res-esp {
+    font: 2rem/1.1 'Isidora Bold', sans-serif;
+    margin-bottom: 6px;
+}
+
+.mapa-res-region {
+    color: #555;
+    font: 1rem/1 'Isidora Sans SemiBold', sans-serif;
+    margin-bottom: 20px;
+}
+
+.mapa-res-region-solo {
+    font: 2rem/1.1 'Isidora Bold', sans-serif;
+    margin-bottom: 12px;
+}
+
+.mapa-res-texto {
+    color: #444;
+    font: 0.95rem/1.65 'Isidora Sans SemiBold', sans-serif;
+    margin-bottom: 20px;
+}
+
+.mapa-res-dias {
+    color: #E5553F;
+    font: 1.1rem/1 'Isidora Sans SemiBold', sans-serif;
+}
+
+.mapa-res-dias span {
+    display: block;
+    font: 4.5rem/1 'Isidora Black', sans-serif;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 680px) {
+    .mapa-filtros { flex-direction: column; align-items: center; }
+    .mapa-filtro { width: 100%; max-width: 320px; }
+    .mapa-layout { flex-direction: column; }
+    .mapa-svg-wrap { flex: none; width: 100%; }
+    .mapa-res-dias span { font-size: 3.5rem; }
+}
+
+/* ══════════════════════════════════════════════════════
    NIVELES · ATENCIÓN MINSA
 ══════════════════════════════════════════════════════ */
 .niveles-section {
