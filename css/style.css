@@ -1336,6 +1336,127 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 }
 
 /* ══════════════════════════════════════════════════════
+   MAYTÉ · CARD FIJO (entra por la derecha)
+══════════════════════════════════════════════════════ */
+.mayte-card-fixed {
+    max-width: 400px;
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%) translateX(calc(100% + 48px));
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: calc(100% - 48px);
+    z-index: 100;
+}
+
+.mayte-card-fixed.is-open {
+    transform: translateY(-50%) translateX(0);
+}
+
+.mayte-card-fixed.is-peeking {
+    cursor: pointer;
+    transform: translateY(-50%) translateX(calc(100% - 20px));
+}
+
+.mayte-card-fixed.is-peeking .mayte-close {
+    display: none;
+}
+
+.mayte-close {
+    background: #000;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    position: absolute;
+    right: -10px;
+    text-align: center;
+    top: -10px;
+    width: 30px;
+    z-index: 1;
+}
+
+.mayte-card {
+    align-items: stretch;
+    background: #E5553F;
+    border-radius: 20px;
+    color: #fff;
+    /*display: flex;*/
+    overflow: hidden;
+    width: 100%;
+}
+
+.mayte-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 36px 24px 36px 40px;
+}
+    .mayte-card-body img{
+        max-width: 120px;
+        position: absolute;
+        right: 23px;
+        top: -34px;
+    }
+
+.mayte-titulo {
+    font: 1.6rem/1 'Isidora Bold', sans-serif;
+    margin-bottom: 16px;
+}
+
+.mayte-hr {
+    border: none;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.4);
+    margin-bottom: 22px;
+}
+
+.mayte-texto {
+    font: 1rem/1.75 'Isidora Sans SemiBold', sans-serif;
+}
+
+.mayte-ilustracion {
+    align-items: flex-end;
+    display: flex;
+    flex-shrink: 0;
+    overflow: hidden;
+    width: 180px;
+}
+
+.mayte-ilustracion img {
+    display: block;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom center;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .mayte-card-fixed {
+        right: 12px;
+        width: calc(100% - 24px);
+    }
+
+    .mayte-card { flex-direction: column-reverse; }
+
+    .mayte-ilustracion {
+        height: 160px;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .mayte-ilustracion img { width: 130px; }
+
+    .mayte-card-body { padding: 24px 20px; }
+
+    .mayte-titulo { font-size: 1.3rem; }
+}
+
+/* ══════════════════════════════════════════════════════
    NIVELES · ATENCIÓN MINSA
 ══════════════════════════════════════════════════════ */
 .niveles-section {

@@ -385,7 +385,29 @@
 
             <!--<div class="sistema-connector-h"></div>-->
 
-            <!-- Subsectores/Prestadores -->
+        </div><!-- /sistema-inner -->
+
+    </section>
+
+    <!-- Card de Mayté: entra por la derecha al llegar a subsectores -->
+    <div class="mayte-card-fixed" id="mayteCard">
+        <button class="mayte-close" id="mayteClose" aria-label="Cerrar">✕</button>
+        <div class="mayte-card">
+            <div class="mayte-card-body">
+                <h4 class="mayte-titulo">Mayté explica</h4>
+                <img src="./img/mayte.png" alt="Mayté">
+                <hr class="mayte-hr">
+                <p class="mayte-texto">A qué sistema perteneces no lo eliges tú – lo decide tu situación laboral. Y eso importa porque cada sistema tiene sus propios tiempos de espera, sus propios médicos y sus propios límites. Selecciona un prestador para ver cómo funciona cada uno.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         SISTEMA DE SALUD · SUBSECTORES INTERACTIVO
+    ══════════════════════════════════════════════════════ -->
+    <section class="sistema-section">
+        <div class="sistema-inner">
+
             <div class="sistema-subsectores">
                 <h3 class="subsectores-h3">Subsectores/Prestadores</h3>
                 <p class="subsectores-intro">En el Perú, no existe un solo sistema de salud sino varios que funcionan en paralelo:</p>
@@ -565,7 +587,7 @@
     </section>
 
     <!-- ══════════════════════════════════════════════════════
-         TÍTULO SECCIÓN 
+         TÍTULO SECCIÓN
     ══════════════════════════════════════════════════════ -->
     <section class="section-title">
         <div class="box-title">
@@ -1463,6 +1485,44 @@
             }
         }, { threshold: 0 }).observe(section);
 
+    })();
+    </script>
+
+    <!-- ══════════════════════════════════════════════════════
+         SCRIPT · MAYTÉ CARD
+    ══════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+        var card     = document.getElementById('mayteCard');
+        var closeBtn = document.getElementById('mayteClose');
+        var section  = document.querySelector('.sistema-section');
+        if (!card || !section) return;
+
+        var interacted = false;
+
+        closeBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            interacted = true;
+            card.classList.remove('is-open');
+            card.classList.add('is-peeking');
+        });
+
+        card.addEventListener('click', function () {
+            if (card.classList.contains('is-peeking')) {
+                card.classList.remove('is-peeking');
+                card.classList.add('is-open');
+            }
+        });
+
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+                card.classList.add(interacted ? 'is-peeking' : 'is-open');
+            } else {
+                card.classList.remove('is-open', 'is-peeking');
+            }
+        }, { threshold: 0.15 });
+
+        observer.observe(section);
     })();
     </script>
 
