@@ -278,7 +278,7 @@
     </section>
 
     <div class="box-texto">
-        <h5>El laberinto de la salud pública</h5>
+        <h5>Los cinco gigantes de la salud</h5>
         <p>
             <span>El sistema de salud peruano tiene cinco grandes actores: el MINSA —que norma y regula—, EsSalud —que atiende a los trabajadores formales—, las sanidades de las Fuerzas Armadas y la PNP, y los privados.</span> En teoría, cada uno cubre a su población. En la práctica, millones caen en los vacíos entre uno y otro.
         </p>
@@ -1392,10 +1392,18 @@
 
         let cur = 0;
 
+        function updateNav() {
+            prevBtn.style.visibility = cur === 0 ? 'hidden' : '';
+            nextBtn.style.visibility = cur === slides.length - 1 ? 'hidden' : '';
+        }
+
         function go(n) {
+            n = Math.max(0, Math.min(n, slides.length - 1));
+            if (n === cur) return;
             slides[cur].classList.remove('is-active');
-            cur = (n + slides.length) % slides.length;
+            cur = n;
             slides[cur].classList.add('is-active');
+            updateNav();
         }
 
         prevBtn.addEventListener('click', () => go(cur - 1));
@@ -1407,6 +1415,8 @@
             const diff = tx - e.changedTouches[0].clientX;
             if (Math.abs(diff) > 50) go(diff > 0 ? cur + 1 : cur - 1);
         }, { passive: true });
+
+        updateNav();
     })();
     </script>
 
@@ -1418,36 +1428,6 @@
         const track   = document.getElementById('casosTrack');
         const section = document.getElementById('casosSection');
         if (!track || !section) return;
-
-        /* ── DRAG SCROLL ──────────────────────────────────── */
-        let isDown     = false;
-        let startClientX = 0;
-        let scrollL    = 0;
-        let isDragging = false;
-
-        track.addEventListener('mousedown', (e) => {
-            isDragging = false;
-            if (e.target.closest('button, input, a')) return;
-            isDown       = true;
-            startClientX = e.clientX;
-            scrollL      = track.scrollLeft;
-            track.classList.add('is-grabbing');
-        });
-
-        document.addEventListener('mouseup', () => {
-            isDown = false;
-            track.classList.remove('is-grabbing');
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            const walk = e.clientX - startClientX;
-            if (Math.abs(walk) > 5) {
-                isDragging = true;
-                e.preventDefault();
-                track.scrollLeft = scrollL - walk;
-            }
-        });
 
         /* ── HELPERS ──────────────────────────────────────── */
         function fmt(s) {
@@ -1485,7 +1465,6 @@
             if (!toggleBtn || !audio) return;
 
             toggleBtn.addEventListener('click', () => {
-                if (isDragging) return;
                 audioWrap.hidden = false;
                 toggleBtn.hidden = true;
                 audio.load();

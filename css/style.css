@@ -819,25 +819,19 @@ section.section-title{
 }
 
 .casos-track {
-    -webkit-overflow-scrolling: touch;
-    cursor: grab;
-    display: flex;
+    display: grid;
     gap: 20px;
-    overflow-x: auto;
-    padding: 10px 60px 24px;
-    scrollbar-width: none;
-    user-select: none;
-    -webkit-user-select: none;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 10px 40px 24px;
 }
-.casos-track::-webkit-scrollbar { display: none; }
-.casos-track.is-grabbing { cursor: grabbing; }
 
 .caso-card {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 6px;
     display: flex;
-    flex: 0 0 380px;
     flex-direction: column;
     min-height: 440px;
     overflow: hidden;
@@ -859,7 +853,7 @@ section.section-title{
     background-size: 100%;    
     border-radius: 100px;
     color: #4D6FE0;
-    font: 0.92rem/1 'Isidora Bold';
+    font: 1.2rem/1 'Isidora Bold';
     padding: 12px 16px;
     white-space: nowrap;
 }
@@ -996,8 +990,7 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 /* ── Mobile ── */
 @media (max-width: 767px) {
     .casos-section { padding: 40px 0 60px; }
-    .casos-track { gap: 14px; padding: 10px 20px 16px; }
-    .caso-card { flex: 0 0 288px; min-height: 400px; }
+    .casos-track { gap: 14px; grid-template-columns: 1fr; padding: 10px 20px 16px; }
     .caso-num { font-size: 0.82rem; padding: 6px 12px; }
     .caso-title-bar { font-size: 0.9rem; }
     .caso-text { font-size: 0.85rem; line-height: 1.65; }
@@ -1756,7 +1749,7 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 
 .nivel-panel {
     animation: npFadeIn 0.35s ease;
-    padding: 10px 0;
+    padding: 10px 0 50px;
 }
 
 .np-title {
