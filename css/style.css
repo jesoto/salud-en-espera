@@ -460,6 +460,12 @@ section.section-title{
                         right: -30px;
                         width: 215px;                   
                     }
+                    .cian img.marca-seccion-5{
+                        bottom: -25px;
+                        position: absolute;
+                        right: -30px;
+                        width: 315px;                 
+                    }
             .cian h4{
                 display: inline-block;
                 font: 1.1rem / 1.3 'Isidora Light';
@@ -1215,7 +1221,7 @@ a.caso-btn-link:hover { background: #2a2a2a; }
     border-color: #47D7EF;
 }
 
-.ss-icon { height: 70px; width: 70px; }
+.ss-icon { /*height: 70px;*/ width: 70px; }
 .ss-icon img { height: 100%; object-fit: contain; width: 100%; }
 
 .ss-name {
