@@ -427,6 +427,19 @@
 
     </section>
 
+    <!-- Card de Mayté: entra por la derecha en la sección enfermedades -->
+    <div class="mayte-card-fixed" id="mayteCard2">
+        <button class="mayte-close" id="mayteClose2" aria-label="Cerrar">✕</button>
+        <div class="mayte-card">
+            <div class="mayte-card-body">
+                <h4 class="mayte-titulo">Mayté explica</h4>
+                <img src="./img/mayte.png" alt="Mayté">
+                <hr class="mayte-hr">
+                <p class="mayte-texto">El patrón es el mismo de siempre: el sistema que tiene menos recursos atiende a más gente, con enfermedades que deberían resolverse antes de llegar a una consulta. No es mala suerte. Es lo que pasa cuando la prevención no existe.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Card de Mayté: entra por la derecha al llegar a subsectores -->
     <div class="mayte-card-fixed" id="mayteCard">
         <button class="mayte-close" id="mayteClose" aria-label="Cerrar">✕</button>
@@ -759,6 +772,8 @@
         </div>
     </section>
 
+    <div id="enfermedad-section">
+
     <!-- ══════════════════════════════════════════════════════
          TÍTULO SECCIÓN
     ══════════════════════════════════════════════════════ -->
@@ -766,7 +781,7 @@
         <div class="box-title">
             <div class="ctn-box-title">
                 <h3>La enfermedad</h3>
-            </div>            
+            </div>
         </div>
         <div class="box-title cian">
             <div class="ctn-box-title">
@@ -774,6 +789,51 @@
             </div>
         </div>
     </section>
+
+    <div class="box-texto">
+        <p>
+            <span>La enfermedad más común en el Perú no es el cáncer ni la diabetes: es la faringitis aguda, con más de 4 millones de casos en 2024.</span> Le sigue la caries dental, con casi 4 millones. Dos enfermedades perfectamente prevenibles que saturan un sistema que debería estar ocupándose de casos más complejos.
+        </p>
+        <p>
+            <span>La obesidad ocupa el cuarto lugar con 3.4 millones de casos, y la dorsalgia —el dolor de espalda— el quinto con 2.1 millones.</span> El patrón es claro: las enfermedades que más aquejan a los peruanos son crónicas, prevenibles y directamente vinculadas a un primer nivel de atención que no funciona.
+        </p>
+    </div>
+
+    <h2 class="titulo-flourish">¿De qué se enferman la mayoría de peruanos? Top 20</h2>
+
+    <div class="box-flourish" id="enfermedades">
+        <div class="flourish-embed flourish-chart" data-src="visualisation/25923553"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/25923553/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+    </div>
+
+    </div><!-- /#enfermedad-section -->
+
+     <!-- ══════════════════════════════════════════════════════
+         TÍTULO SECCIÓN 
+    ══════════════════════════════════════════════════════ -->
+    <section class="section-title">
+        <div class="box-title">
+            <div class="ctn-box-title">
+                <h3>Los establecimientos</h3>
+            </div>            
+        </div>
+        <div class="box-title cian">
+            <div class="ctn-box-title">
+                <h3>de salud que se caen <img src="./img/marca-seccion-6.png" alt="" width="100%" class="marca-seccion-6"></h3>
+            </div>
+        </div>
+    </section>
+
+    <div class="box-texto">
+        <p>
+            <span>La mayoría de hospitales públicos del Perú tiene más de 40 años de antigüedad.</span> Fueron construidos con normas sísmicas hoy obsoletas, ampliados sin planificación y mantenidos a medias. El resultado: casi 9 de cada 10 hospitales de segundo y tercer nivel opera con infraestructura inadecuada.
+        </p>
+        <p>
+            <span>La brecha no es uniforme. Amazonas, Ancash, Apurímac, Callao, Cusco y Tumbes tienen el 100% de sus hospitales en condición inadecuada.</span> Solo San Martín e Ica muestran cifras algo menores. La tabla que sigue desglosa la situación región por región, establecimiento por establecimiento.
+        </p>
+        <p>
+            <span>El primer nivel no está mejor. De las más de 9,200 postas y centros de salud del país, el 95.89% no tiene las condiciones mínimas para funcionar: les falta equipamiento, infraestructura en buen estado o ambas cosas a la vez.</span> Pasco, Madre de Dios y Junín tienen prácticamente la totalidad de sus establecimientos en esa situación. Son la puerta de entrada al sistema —y están rotos antes de que alguien toque el timbre.
+        </p>
+    </div>
 
     <!-- ══════════════════════════════════════════════════════
          SCRIPT · HERO VIDEO (scroll scrubbing)
@@ -1586,6 +1646,44 @@
             }
         }, { threshold: 0 }).observe(section);
 
+    })();
+    </script>
+
+    <!-- ══════════════════════════════════════════════════════
+         SCRIPT · MAYTÉ CARD 2 (enfermedades)
+    ══════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+        var card     = document.getElementById('mayteCard2');
+        var closeBtn = document.getElementById('mayteClose2');
+        var section  = document.getElementById('enfermedad-section');
+        if (!card || !section) return;
+
+        var interacted = false;
+
+        closeBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            interacted = true;
+            card.classList.remove('is-open');
+            card.classList.add('is-peeking');
+        });
+
+        card.addEventListener('click', function () {
+            if (card.classList.contains('is-peeking')) {
+                card.classList.remove('is-peeking');
+                card.classList.add('is-open');
+            }
+        });
+
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+                card.classList.add(interacted ? 'is-peeking' : 'is-open');
+            } else {
+                card.classList.remove('is-open', 'is-peeking');
+            }
+        }, { threshold: 0.15 });
+
+        observer.observe(section);
     })();
     </script>
 
