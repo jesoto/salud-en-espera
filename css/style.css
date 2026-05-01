@@ -830,7 +830,7 @@ section.section-title{
     .ds-slide { flex-direction: column; gap: 16px; }
     .ds-text { flex: none; padding: 0 16px; width: 100%; }
     .ds-text h3 { font-size: 2rem; margin-bottom: 14px; }
-    .ds-text p { font-size: 0.9rem; }
+    .ds-text p { font-size: 1rem; }
     .ds-img { flex: none; padding: 0 20px; width: 100%; }
     .ds-img img { max-height: 200px; }
 }
@@ -1017,9 +1017,15 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 @media (max-width: 767px) {
     .casos-section { padding: 40px 0 60px; }
     .casos-track { gap: 14px; grid-template-columns: 1fr; padding: 10px 20px 16px; }
-    .caso-num { font-size: 0.82rem; padding: 6px 12px; }
-    .caso-title-bar { font-size: 0.9rem; }
-    .caso-text { font-size: 0.85rem; line-height: 1.65; }
+    .caso-num { font-size: 1.2rem; padding: 12px; }
+    .caso-title-bar { font-size: 1rem; }
+    .caso-text { font-size: 1rem; line-height: 1.65; }
+    .caso-card{
+        margin-bottom: 40px;
+    }
+    .box-texto{
+        padding: 0 20px;
+    }
 }
 
         /* ══════════════════════════════════════════
@@ -1033,6 +1039,7 @@ a.caso-btn-link:hover { background: #2a2a2a; }
             .es-sticky {
                 position: relative;
                 height: auto;
+                overflow-x: scroll;
             }
             .es-header {
                 padding: 1rem 1.2rem 0.75rem;
@@ -1045,7 +1052,7 @@ a.caso-btn-link:hover { background: #2a2a2a; }
             }
             .panel-patients {
                 flex: none;
-                height: 58vmax;
+                height: 70vmax;
                 border-right: none;
                 border-bottom: 1px solid rgba(0,0,0,0.07);
                 overflow-x: auto;
@@ -1054,7 +1061,11 @@ a.caso-btn-link:hover { background: #2a2a2a; }
                 scroll-snap-type: x proximity;
             }
             .es-stage {
-                height: 100%;
+                position: relative;
+                top: auto;
+                inset: auto;
+                min-width: 780px;
+                height: calc(58vmax - 4.8rem);
             }
             .panel-atenciones {
                 flex: none;
@@ -1244,7 +1255,7 @@ span.separador {
     .ec-card:nth-child(3) { border-right: none; }
     .ec-card:nth-child(1),
     .ec-card:nth-child(2),
-    .ec-card:nth-child(3) { border-bottom: 1.5px solid #e8e8e8; }
+    .ec-card:nth-child(3) { border-bottom: 1.5px solid #e8e8e8; width: 90%;}
     .ec-mapa { width: 100px; height: 100px; }
     .ec-num { font-size: 2.2rem; }
     .ec-num-sm { font-size: 1.5rem; }
@@ -1676,13 +1687,45 @@ span.separador {
 .sistema-nota p strong { font-family: 'Isidora Bold', sans-serif; }
 
 @media (max-width: 767px) {
-    .sistema-section { padding: 50px 0 60px; }
+    .sistema-section { padding: 0 0 60px; }
     .sistema-h2 { font-size: 1.5rem; }
     .subsector-btn { flex: 0 0 calc(50% - 10px); max-width: none; }
     .ss-num { font-size: 1.8rem; }
     .ss-detail { padding: 24px 16px; }
     .sistema-nota { padding: 28px 18px 20px; }
-    .sistema-nota p { font-size: 0.88rem; }
+    .sistema-nota p { font-size: 1rem; }
+    .sistema-subsectores{
+        padding-top: 0;
+    }
+    .nota-badge{
+        font-size: 1rem;
+    }
+    .ctn-box-title h3{
+        font-size: 2.3rem;
+        padding-left: 5px;
+    }
+    span.separador{
+        height: 33vh;
+    }
+    .mapa-section#mapaTiempos{
+        padding: 0 0 10px;
+    }
+    .box-flourish#establecimientos{
+        padding: 0 0 24px;
+    }
+    .evz{        
+        padding: 0 5px;
+    }
+    #evzTrack .evz-card{
+        border: none;
+        padding: 28px 5px 22px;
+    }
+    .grafico-iframe-wrap{
+        padding: 0 5px 40px;
+    }
+    .brecha-section{
+        padding: 40px 0 0;
+    }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -1787,11 +1830,16 @@ span.separador {
 
 @media (max-width: 600px) {
     .mayte-card-fixed {
-        right: 12px;
+        right: 8%;
+        max-width: 85%;
         width: calc(100% - 24px);
-    }
+    }   
 
     .mayte-card { flex-direction: column-reverse; }
+
+    .mayte-card-body img{
+        top: -51px;
+    }
 
     .mayte-ilustracion {
         height: 160px;
@@ -1958,9 +2006,13 @@ span.separador {
 @media (max-width: 680px) {
     .mapa-filtros { flex-direction: column; align-items: center; }
     .mapa-filtro { width: 100%; max-width: 320px; }
-    .mapa-layout { flex-direction: column; }
+    .mapa-layout { flex-direction: column; gap: 0;}
     .mapa-svg-wrap { flex: none; width: 100%; }
+    .mapa-svg-wrap svg { height: auto; }
     .mapa-res-dias span { font-size: 3.5rem; }
+    .mapa-res-region{
+        margin-bottom: 10px;
+    }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -2278,7 +2330,7 @@ span.separador {
 .np-dl dd { margin: 0; }
 
 @media (max-width: 767px) {
-    .niveles-section { padding: 40px 0 60px; }
+    .niveles-section { padding: 40px 0 0; margin: 60px 0 0;}
     .niveles-inner { padding: 0 16px; }
     .niveles-header h2 { font-size: 1.5rem; }
     .niveles-btns { gap: 8px; }
@@ -2287,8 +2339,24 @@ span.separador {
     .niveles-dr-bubble { font-size: 1.2rem; max-width: 100%; padding: 20px 22px; }
     .niveles-dr-bubble::after,
     .niveles-dr-bubble::before { display: none; }
-    .np-title { font-size: 1.8rem; }
+    .np-title { font-size: 1.6rem; }
     .np-dl-row { grid-template-columns: 76px 1fr; }
+    .sistema-minsa{
+        margin-bottom: 20px;
+    }
+    .sistema-susalud{
+        margin-top: 70px;
+    }
+    .niveles-hint{
+        margin-bottom: 20px;
+    }
+    .subsectores-grid{
+        gap: 10px;
+    }
+    .ss-name,
+    .ss-desc{
+        font-size: 1rem;
+    }
 }
 
 .titulo-flourish{
@@ -2540,12 +2608,41 @@ span.separador {
 }
 
 @media (max-width: 640px) {
+    .evz-tabs {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 6px;
+        margin-left: -16px;
+        margin-right: -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        scrollbar-width: none;
+    }
+    .evz-tabs::-webkit-scrollbar { display: none; }
+    .evz-tab { flex-shrink: 0; font-size: 0.65rem; padding: 10px 14px; }
+    .evz-arrow { display: none; }
     .evz-card { flex: 0 0 100%; }
     .evz-rate-big { font-size: 3.2rem; }
-    .evz-tab { font-size: 0.65rem; padding: 10px 14px; }
     .evz-region { font-size: 1.3rem; }
     .evz-viz-side svg { width: 160px; height: 160px; }
     .evz-prop-wrap svg { width: 160px; height: 160px; }
+
+
+
+    .ctn-bajada h2{
+        font: 3rem / .9 "ivypresto-headline";
+    }
+    .ctn-bajada p{
+        font: 1.2rem / 1.6 'Isidora Medium';
+        padding: 20px;
+    }
+    .cian h4{
+        margin: 10px 0;
+        padding-left: 5px;
+    }
+
 }
 
 /* ============================================
