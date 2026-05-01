@@ -820,7 +820,7 @@
 
     </div><!-- /#enfermedad-section -->
 
-     <!-- ══════════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════════════
          TÍTULO SECCIÓN 
     ══════════════════════════════════════════════════════ -->
     <section class="section-title">
@@ -853,6 +853,371 @@
     <div class="box-flourish" id="establecimientos">
         <div class="flourish-embed flourish-hierarchy" data-src="visualisation/28778082"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28778082/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
     </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         TÍTULO SECCIÓN 
+    ══════════════════════════════════════════════════════ -->
+    <section class="section-title">
+        <div class="box-title">
+            <div class="ctn-box-title">
+                <h3>El personal</h3>
+            </div>            
+        </div>
+        <div class="box-title cian">
+            <div class="ctn-box-title">
+                <h3>que falta <img src="./img/marca-seccion-7.png" alt="" width="100%" class="marca-seccion-7"></h3>
+            </div>
+        </div>
+    </section>
+
+    <div class="box-texto">
+        <p>
+            <span>El MINSA tiene registrados más de 400,000 trabajadores de salud a nivel nacional.</span> Pero el 71% tiene contrato temporal o figura bajo otras modalidades precarias. Solo el 14% es nombrado. Eso significa que 7 de cada 10 trabajadores del sistema público pueden quedarse sin trabajo —y sin reemplazante— de un año para el otro.
+        </p>
+        <p>
+            <span>La distribución tampoco es justa. Lima Norte concentra casi 29,000 trabajadores; Huancavelica apenas llega a 13,000 para una población con mucha mayor vulnerabilidad.</span> En las zonas más alejadas, son los médicos SERUM —recién egresados haciendo su servicio rural obligatorio— quienes sostienen la atención. La tabla que sigue muestra cuántos hay por región y de qué tipo.
+        </p>
+    </div>
+
+    <h2 class="titulo-flourish">Enfermedad versus especialistas</h2>
+
+    <!-- ══════════════════════════════════════════════════════
+         ENFERMEDAD VS ESPECIALISTAS · VISUALIZACIÓN
+    ══════════════════════════════════════════════════════ -->
+    <section class="evz" id="evz-section-viz">
+        <div class="evz-tabs" role="tablist" aria-label="Selecciona un área de salud">
+            <button class="evz-tab is-active" data-area="0" role="tab">Cáncer / Oncólogos</button>
+            <button class="evz-tab" data-area="1" role="tab">Salud Materno Infantil / Doctores</button>
+            <button class="evz-tab" data-area="2" role="tab">Salud Mental / Doctores</button>
+            <button class="evz-tab" data-area="3" role="tab">Brecha Múltiple</button>
+        </div>
+        <div class="evz-slider">
+            <button class="evz-arrow" id="evzPrev" aria-label="Anterior">&#8249;</button>
+            <div class="evz-viewport" id="evzViewport">
+                <div class="evz-track" id="evzTrack"></div>
+            </div>
+            <button class="evz-arrow" id="evzNext" aria-label="Siguiente">&#8250;</button>
+        </div>
+        <div class="evz-pips" id="evzPips"></div>
+    </section>
+
+    <script>
+    (function () {
+        /* ─── Data ─── */
+        var AREAS = [
+            {
+                id: 'cancer', type: 'ratio',
+                unit: 'PACIENTES', specLabel: 'ONCÓLOGO',
+                patColor: '#47D7EF', specColor: '#C0392B',
+                cards: [
+                    { region: 'Amazonas', n: 136, s: 1,
+                      desc: 'Una región con casos de cáncer registrados no tiene oncólogo. Los pacientes deben trasladarse a Lima o morir esperando.',
+                      note: '*Solo 1 oncólogo contratado por la red. Sin cirujano oncólogo.' },
+                    { region: 'Lima Metropolitana', n: 283, s: 1,
+                      desc: 'Incluso donde hay más oncólogos del país, la carga es casi 6 veces el estándar recomendado.',
+                      note: 'El estándar OPS es 50 casos por oncólogo.' },
+                    { region: 'Apurímac', n: 198, s: 1,
+                      desc: 'En la sierra sur, lejos de los centros de referencia, un paciente con cáncer empieza su lucha contra el sistema antes de empezar su tratamiento.',
+                      note: '' },
+                    { region: 'Lambayeque', n: 184, s: 1,
+                      desc: 'El norte del país no escapa a la escasez oncológica. La carga supera en más de tres veces el estándar internacional recomendado.',
+                      note: '' }
+                ]
+            },
+            {
+                id: 'materna', type: 'rate',
+                rateMax: 194,
+                rateLabel: 'por 100,000 nacidos vivos',
+                cards: [
+                    { region: 'Loreto', rate: 194,
+                      desc: 'La tasa más alta del país. Una mujer gestante en la selva peruana enfrenta distancias, ausencia de especialistas y una probabilidad de morir que cuadruplica el promedio nacional.',
+                      gyn: null },
+                    { region: 'Amazonas', rate: 130,
+                      desc: 'Geografía difícil, caminos interrumpidos y pocos especialistas. Cada embarazo en Amazonas es una carrera contra el tiempo.',
+                      gyn: 56 },
+                    { region: 'Puno', rate: 116,
+                      desc: 'En la sierra sur, la altitud y la distancia complican cada emergencia obstétrica. Las regiones más aisladas pagan el precio de un sistema que no llega.',
+                      gyn: 243 },
+                    { region: 'Madre de Dios', rate: 109,
+                      desc: 'La región con mayor extensión por habitante tiene una de las tasas más altas del país. Lejos de todo, cerca del riesgo.',
+                      gyn: 11 }
+                ]
+            },
+            {
+                id: 'mental', type: 'ratio',
+                unit: 'CASOS', specLabel: 'PSIQUIATRA',
+                patColor: '#47D7EF', specColor: '#C0392B',
+                cards: [
+                    { region: 'La Libertad', n: 66, s: 1,
+                      desc: 'La región con mayor carga por psiquiatra. La crisis de salud mental no se ve, pero se acumula en listas de espera que no tienen fin.',
+                      note: '' },
+                    { region: 'Callao', n: 65, s: 1,
+                      desc: 'A las puertas de Lima, una crisis ignorada en la periferia urbana. La proximidad a la capital no garantiza atención.',
+                      note: '' },
+                    { region: 'Loreto', n: 56, s: 1,
+                      desc: 'La misma región con la peor mortalidad materna enfrenta también una crisis de salud mental sin respuesta del sistema.',
+                      note: '' },
+                    { region: 'Cusco', n: 51, s: 1,
+                      desc: 'El turismo impulsa la economía regional, pero la salud mental sigue siendo un servicio al que pocos pueden acceder.',
+                      note: '' }
+                ]
+            },
+            {
+                id: 'brecha', type: 'multi',
+                cards: [
+                    { region: 'Loreto',
+                      desc: 'La región donde todas las crisis convergen. La peor tasa de mortalidad materna del país, escasez crítica de oncólogos y una crisis de salud mental sin atención.',
+                      metrics: [
+                          { val: '194', label: 'muertes maternas por 100k nacidos' },
+                          { val: '56', label: 'casos de salud mental por psiquiatra' },
+                          { val: '79', label: 'pacientes de cáncer por oncólogo' }
+                      ]
+                    },
+                    { region: 'Amazonas',
+                      desc: 'Una región que suma emergencias: alta mortalidad materna y una escasez severa de psiquiatras que deja sin cobertura a miles de personas.',
+                      metrics: [
+                          { val: '130', label: 'muertes maternas por 100k nacidos' },
+                          { val: '17', label: 'psiquiatras en toda la región' }
+                      ]
+                    },
+                    { region: 'Cajamarca',
+                      desc: 'Una región que acumula muertes maternas evitables, casos oncológicos sin atención y una crisis de salud mental silenciosa que el sistema no registra.',
+                      metrics: [
+                          { val: '90', label: 'muertes maternas por 100k nacidos' },
+                          { val: '16', label: 'muertes maternas registradas' },
+                          { val: '1.014', label: 'casos de salud mental sin cobertura' },
+                          { val: '37', label: 'psiquiatras en toda la región' }
+                      ]
+                    }
+                ]
+            }
+        ];
+
+        /* ─── SVG generators ─── */
+        function makeDotSVG(n, dotR, fill, sz) {
+            sz = sz || 200;
+            var cx = sz / 2, cy = sz / 2;
+            var step = dotR * 2 + 1.5;
+            var R = cx - dotR - 1;
+            // Genera todas las posiciones del grid dentro del círculo
+            var all = [];
+            for (var iy = 0; ; iy++) {
+                var y = cy - R + dotR + iy * step;
+                if (y > cy + R) break;
+                for (var ix = 0; ; ix++) {
+                    var x = cx - R + dotR + ix * step;
+                    if (x > cx + R) break;
+                    var dx = x - cx, dy = y - cy;
+                    var d2 = dx * dx + dy * dy;
+                    if (d2 <= R * R) all.push([x, y, d2]);
+                }
+            }
+            // Ordena del centro hacia afuera para que el corte sea radial
+            all.sort(function (a, b) { return a[2] - b[2]; });
+            var pts = all.slice(0, n);
+            var circles = pts.map(function (p) {
+                return '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="' + dotR + '" fill="' + fill + '"/>';
+            }).join('');
+            return '<svg width="' + sz + '" height="' + sz + '" viewBox="0 0 ' + sz + ' ' + sz + '">' + circles + '</svg>';
+        }
+
+        function makeSpecSVG(fill, sz) {
+            sz = sz || 200;
+            var c = sz / 2, r = sz * 0.22;
+            return '<svg width="' + sz + '" height="' + sz + '" viewBox="0 0 ' + sz + ' ' + sz + '"><circle cx="' + c + '" cy="' + c + '" r="' + r + '" fill="' + fill + '"/></svg>';
+        }
+
+        // Genera círculo de dots con el centro destacado (hiColor) y el resto en loColor.
+        // nHighlight = cuántos dots del centro se colorean → permite comparar entre regiones.
+        function makePropDotSVG(nHighlight, hiColor, loColor, dotR, sz) {
+            sz = sz || 200;
+            var cx = sz / 2, cy = sz / 2;
+            var step = dotR * 2 + 1.5;
+            var R = cx - dotR - 1;
+            var all = [];
+            for (var iy = 0; ; iy++) {
+                var y = cy - R + dotR + iy * step;
+                if (y > cy + R) break;
+                for (var ix = 0; ; ix++) {
+                    var x = cx - R + dotR + ix * step;
+                    if (x > cx + R) break;
+                    var dx = x - cx, dy = y - cy;
+                    var d2 = dx * dx + dy * dy;
+                    if (d2 <= R * R) all.push([x, y, d2]);
+                }
+            }
+            all.sort(function (a, b) { return a[2] - b[2]; });
+            var circles = all.map(function (p, i) {
+                var fill = i < nHighlight ? hiColor : loColor;
+                return '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="' + dotR + '" fill="' + fill + '"/>';
+            }).join('');
+            return '<svg width="' + sz + '" height="' + sz + '" viewBox="0 0 ' + sz + ' ' + sz + '">' + circles + '</svg>';
+        }
+
+        /* ─── Card builders ─── */
+        function buildRatioCard(card, area) {
+            return '<div class="evz-card">' +
+                '<h3 class="evz-region">' + card.region + '</h3>' +
+                '<p class="evz-desc">' + card.desc + '</p>' +
+                '<div class="evz-viz">' +
+                    '<div class="evz-viz-side">' +
+                        makeDotSVG(card.n, 4, area.patColor, 200) +
+                        '<div class="evz-fig-num">' + card.n + '</div>' +
+                        '<div class="evz-fig-label">' + area.unit + '</div>' +
+                    '</div>' +
+                    '<div class="evz-viz-side">' +
+                        makeSpecSVG(area.specColor, 200) +
+                        '<div class="evz-fig-num">' + card.s + '</div>' +
+                        '<div class="evz-fig-label">' + area.specLabel + '</div>' +
+                    '</div>' +
+                '</div>' +
+                (card.note ? '<p class="evz-note">' + card.note + '</p>' : '') +
+            '</div>';
+        }
+
+        function buildRateCard(card, area) {
+            var totalApprox = 314;
+            var maxHighlight = Math.round(totalApprox * 0.25);
+            var nHighlight = Math.round(card.rate / area.rateMax * maxHighlight);
+            var rateSvg = makePropDotSVG(nHighlight, '#C0392B', '#BFE9F5', 4, 200);
+
+            if (card.gyn) {
+                // Side-by-side: mortalidad | ginecólogos (igual que cáncer/salud mental)
+                var gynSvg = makeDotSVG(card.gyn, 4, '#47D7EF', 200);
+                return '<div class="evz-card">' +
+                    '<h3 class="evz-region">' + card.region + '</h3>' +
+                    '<p class="evz-desc">' + card.desc + '</p>' +
+                    '<div class="evz-viz">' +
+                        '<div class="evz-viz-side">' +
+                            rateSvg +
+                            '<div class="evz-fig-num">' + card.rate + '</div>' +
+                            '<div class="evz-fig-label">muertes maternas ' + area.rateLabel + '</div>' +
+                        '</div>' +
+                        '<div class="evz-viz-side">' +
+                            gynSvg +
+                            '<div class="evz-fig-num">' + card.gyn + '</div>' +
+                            '<div class="evz-fig-label">ginecólogos en la región</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+            }
+
+            // Sin datos de ginecólogos: visualización centrada (ej. Loreto)
+            return '<div class="evz-card">' +
+                '<h3 class="evz-region">' + card.region + '</h3>' +
+                '<p class="evz-desc">' + card.desc + '</p>' +
+                '<div class="evz-prop-wrap">' +
+                    rateSvg +
+                    '<div class="evz-prop-stat">' +
+                        '<span class="evz-rate-big">' + card.rate + '</span>' +
+                        '<span class="evz-rate-unit">muertes maternas ' + area.rateLabel + '</span>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+        }
+
+        function buildMultiCard(card) {
+            var metricsHtml = card.metrics.map(function (m) {
+                return '<div class="evz-metric">' +
+                    '<span class="evz-metric-val">' + m.val + '</span>' +
+                    '<span class="evz-metric-label">' + m.label + '</span>' +
+                '</div>';
+            }).join('');
+            return '<div class="evz-card">' +
+                '<h3 class="evz-region">' + card.region + '</h3>' +
+                '<p class="evz-desc">' + card.desc + '</p>' +
+                '<div class="evz-metrics">' + metricsHtml + '</div>' +
+            '</div>';
+        }
+
+        /* ─── State ─── */
+        var currentArea = 0;
+        var currentPage = 0;
+
+        var track    = document.getElementById('evzTrack');
+        var viewport = document.getElementById('evzViewport');
+        var pipsEl   = document.getElementById('evzPips');
+        var btnPrev  = document.getElementById('evzPrev');
+        var btnNext  = document.getElementById('evzNext');
+
+        function getPerPage() { return window.innerWidth <= 640 ? 1 : 2; }
+
+        function totalPages() {
+            return Math.ceil(AREAS[currentArea].cards.length / getPerPage());
+        }
+
+        function buildCards() {
+            var area = AREAS[currentArea];
+            track.innerHTML = '';
+            area.cards.forEach(function (card) {
+                var html;
+                if (area.type === 'ratio')     html = buildRatioCard(card, area);
+                else if (area.type === 'rate') html = buildRateCard(card, area);
+                else                           html = buildMultiCard(card);
+                track.insertAdjacentHTML('beforeend', html);
+            });
+        }
+
+        function buildPips() {
+            pipsEl.innerHTML = '';
+            var n = totalPages();
+            for (var i = 0; i < n; i++) {
+                var btn = document.createElement('button');
+                btn.className = 'evz-pip' + (i === currentPage ? ' is-active' : '');
+                btn.setAttribute('aria-label', 'Página ' + (i + 1));
+                (function (idx) {
+                    btn.addEventListener('click', function () { goTo(idx); });
+                })(i);
+                pipsEl.appendChild(btn);
+            }
+        }
+
+        function goTo(page) {
+            var pages = totalPages();
+            currentPage = Math.max(0, Math.min(page, pages - 1));
+            var W   = viewport.offsetWidth;
+            var gap = 24;
+            track.style.transform = 'translateX(-' + (currentPage * (W + gap)) + 'px)';
+            btnPrev.disabled = currentPage === 0;
+            btnNext.disabled = currentPage >= pages - 1;
+            pipsEl.querySelectorAll('.evz-pip').forEach(function (p, i) {
+                p.classList.toggle('is-active', i === currentPage);
+            });
+        }
+
+        function renderArea(idx) {
+            currentArea = idx;
+            currentPage = 0;
+            document.querySelectorAll('.evz-tab').forEach(function (t, i) {
+                t.classList.toggle('is-active', i === idx);
+            });
+            buildCards();
+            buildPips();
+            goTo(0);
+        }
+
+        /* ─── Events ─── */
+        document.querySelectorAll('.evz-tab').forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                renderArea(parseInt(tab.dataset.area, 10));
+            });
+        });
+        btnPrev.addEventListener('click', function () { goTo(currentPage - 1); });
+        btnNext.addEventListener('click', function () { goTo(currentPage + 1); });
+
+        var resizeTimer;
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                buildPips();
+                goTo(currentPage);
+            }, 150);
+        });
+
+        /* ─── Init ─── */
+        renderArea(0);
+    })();
+    </script>
 
     <!-- ══════════════════════════════════════════════════════
          SCRIPT · HERO VIDEO (scroll scrubbing)

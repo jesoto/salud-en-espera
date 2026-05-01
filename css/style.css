@@ -472,6 +472,12 @@ section.section-title{
                         right: -30px;
                         width: 480px;             
                     }
+                    .cian img.marca-seccion-7{
+                        bottom: -35px;
+                        position: absolute;
+                        right: -30px;
+                        width: 225px;           
+                    }
             .cian h4{
                 display: inline-block;
                 font: 1.1rem / 1.3 'Isidora Light';
@@ -1829,5 +1835,247 @@ a.caso-btn-link:hover { background: #2a2a2a; }
     max-width: 800px;
     padding: 0 28px 24px;
     position: relative;
-    text-align: left;    
+    text-align: left;
+}
+
+/* ═══════════════════════════════════════════════════════
+   ENFERMEDAD VS ESPECIALISTAS · VISUALIZACIÓN
+═══════════════════════════════════════════════════════ */
+.evz {
+    margin: 0 auto 60px;
+    max-width: 1040px;
+    padding: 0 24px;
+}
+
+.evz-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 36px;
+}
+
+.evz-tab {
+    background: #fff;
+    border: 2px solid #111;
+    border-radius: 100px;
+    color: #111;
+    cursor: pointer;
+    font: 700 0.72rem/1 'Isidora Bold', sans-serif;
+    letter-spacing: 0.04em;
+    padding: 12px 22px;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+.evz-tab:hover { background: #f0f0f0; }
+.evz-tab.is-active { background: #111; color: #fff; }
+
+.evz-slider {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+}
+
+.evz-viewport {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.evz-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+}
+
+.evz-card {
+    background: #fff;
+    border: 1px solid #e0ddd8;
+    border-radius: 16px;
+    flex: 0 0 calc(50% - 12px);
+    min-width: 0;
+    overflow: hidden;
+    padding: 28px 24px 22px;
+    text-align: center;
+}
+
+.evz-region {
+    color: #111;
+    font: 1.6rem/1 'Isidora Black', sans-serif;
+    letter-spacing: 0.02em;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+}
+
+.evz-desc {
+    color: #555;
+    font: 0.88rem/1.55 'Isidora Sans SemiBold', sans-serif;
+    margin: 0 0 22px;
+}
+
+/* ── Ratio viz (cáncer, salud mental) ── */
+.evz-viz {
+    align-items: flex-start;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.evz-viz-side {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.evz-viz-side svg { display: block; }
+
+.evz-fig-num {
+    color: #111;
+    font: 1.6rem/1 'Isidora Black', sans-serif;
+}
+
+.evz-fig-label {
+    color: #666;
+    font: 0.68rem/1 'Isidora Bold', sans-serif;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.evz-note {
+    color: #999;
+    font: 0.76rem/1.4 'Isidora Sans SemiBold', sans-serif;
+    margin: 0;
+}
+
+/* ── Rate viz (salud materna) ── */
+.evz-rate-wrap {
+    margin-bottom: 14px;
+    padding: 4px 0;
+}
+
+.evz-rate-big {
+    color: #E5553F;
+    display: block;
+    font: 4.5rem/1 'Isidora Black', sans-serif;
+    margin-bottom: 8px;
+}
+
+.evz-rate-unit {
+    color: #444;
+    display: block;
+    font: 0.88rem/1.4 'Isidora Sans SemiBold', sans-serif;
+    margin-bottom: 24px;
+}
+
+.evz-rate-bar-outer {
+    background: #f0ede8;
+    border-radius: 100px;
+    height: 8px;
+    margin: 0 auto 8px;
+    max-width: 280px;
+    overflow: hidden;
+}
+
+.evz-rate-bar-inner {
+    background: #E5553F;
+    border-radius: 100px;
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+.evz-rate-context {
+    color: #aaa;
+    font: 0.74rem/1 'Isidora Sans SemiBold', sans-serif;
+}
+
+/* ── Multi viz (brecha múltiple) ── */
+.evz-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.evz-metric {
+    border-left: 3px solid #E5553F;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-left: 14px;
+}
+
+.evz-metric-val {
+    color: #E5553F;
+    font: 2.2rem/1 'Isidora Black', sans-serif;
+}
+
+.evz-metric-label {
+    color: #555;
+    font: 0.82rem/1.3 'Isidora Sans SemiBold', sans-serif;
+}
+
+/* ── Navigation arrows ── */
+.evz-arrow {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 2.6rem;
+    line-height: 1;
+    padding: 4px 6px;
+    transition: color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+.evz-arrow:hover:not(:disabled) { color: #111; }
+.evz-arrow:disabled { cursor: default; opacity: 0.2; }
+
+/* ── Page indicators ── */
+.evz-pips {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.evz-pip {
+    background: #ccc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 8px;
+    padding: 0;
+    transition: background 0.2s;
+    width: 8px;
+}
+.evz-pip.is-active { background: #E5553F; }
+
+/* ── Dot proportion (salud materna) ── */
+.evz-prop-wrap {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.evz-prop-stat {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+@media (max-width: 640px) {
+    .evz-card { flex: 0 0 100%; }
+    .evz-rate-big { font-size: 3.2rem; }
+    .evz-tab { font-size: 0.65rem; padding: 10px 14px; }
+    .evz-region { font-size: 1.3rem; }
+    .evz-viz-side svg { width: 160px; height: 160px; }
+    .evz-prop-wrap svg { width: 160px; height: 160px; }
 }
