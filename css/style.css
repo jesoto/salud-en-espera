@@ -1903,15 +1903,14 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 
 .evz-region {
     color: #111;
-    font: 1.6rem/1 'Isidora Black', sans-serif;
-    letter-spacing: 0.02em;
+    font: 1.1rem/1 'Isidora Bold';
     margin: 0 0 12px;
     text-transform: uppercase;
 }
 
 .evz-desc {
     color: #555;
-    font: 0.88rem/1.55 'Isidora Sans SemiBold', sans-serif;
+    font: 0.85rem/1.55 'Isidora Medium';
     margin: 0 0 22px;
 }
 
@@ -1935,12 +1934,12 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 
 .evz-fig-num {
     color: #111;
-    font: 1.6rem/1 'Isidora Black', sans-serif;
+    font: 1.1rem/1 'Isidora Medium';
 }
 
 .evz-fig-label {
-    color: #666;
-    font: 0.68rem/1 'Isidora Bold', sans-serif;
+    color: #111;
+    font: 0.68rem/1 'Isidora Medium';
     letter-spacing: 0.07em;
     text-transform: uppercase;
 }
@@ -1958,17 +1957,17 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 }
 
 .evz-rate-big {
-    color: #E5553F;
+    color: #111;
     display: block;
-    font: 4.5rem/1 'Isidora Black', sans-serif;
+    font: 1.2rem / 1 'Isidora Medium';
     margin-bottom: 8px;
 }
 
 .evz-rate-unit {
-    color: #444;
-    display: block;
-    font: 0.88rem/1.4 'Isidora Sans SemiBold', sans-serif;
-    margin-bottom: 24px;
+    color: #111;
+    font: 0.68rem / 1 'Isidora Medium';
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
 }
 
 .evz-rate-bar-outer {

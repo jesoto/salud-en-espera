@@ -908,7 +908,7 @@
             {
                 id: 'cancer', type: 'ratio',
                 unit: 'PACIENTES', specLabel: 'ONCÓLOGO',
-                patColor: '#47D7EF', specColor: '#C0392B',
+                patColor: '#4a7790', specColor: '#851f18',
                 cards: [
                     { region: 'Amazonas', n: 136, s: 1,
                       desc: 'Una región con casos de cáncer registrados no tiene oncólogo. Los pacientes deben trasladarse a Lima o morir esperando.',
@@ -917,10 +917,10 @@
                       desc: 'Incluso donde hay más oncólogos del país, la carga es casi 6 veces el estándar recomendado.',
                       note: 'El estándar OPS es 50 casos por oncólogo.' },
                     { region: 'Apurímac', n: 198, s: 1,
-                      desc: 'En la sierra sur, lejos de los centros de referencia, un paciente con cáncer empieza su lucha contra el sistema antes de empezar su tratamiento.',
+                      desc: 'Casi 200 pacientes por oncólogo. Una de las brechas más críticas fuera de Lima.',
                       note: '' },
                     { region: 'Lambayeque', n: 184, s: 1,
-                      desc: 'El norte del país no escapa a la escasez oncológica. La carga supera en más de tres veces el estándar internacional recomendado.',
+                      desc: 'Lambayeque tiene la mayor carga de cáncer per cápita fuera de Lima y uno de los peores ratios de atención.',
                       note: '' }
                 ]
             },
@@ -930,35 +930,35 @@
                 rateLabel: 'por 100,000 nacidos vivos',
                 cards: [
                     { region: 'Loreto', rate: 194,
-                      desc: 'La tasa más alta del país. Una mujer gestante en la selva peruana enfrenta distancias, ausencia de especialistas y una probabilidad de morir que cuadruplica el promedio nacional.',
+                      desc: 'Loreto tiene una tasa de mortalidad materna casi 7 veces la de Lima y casi 3 veces la meta que el Perú se comprometió a alcanzar en 2030.',
                       gyn: null },
                     { region: 'Amazonas', rate: 130,
-                      desc: 'Geografía difícil, caminos interrumpidos y pocos especialistas. Cada embarazo en Amazonas es una carrera contra el tiempo.',
+                      desc: 'Segunda TMM más alta del país. Pocos ginecólogos y alta dispersión geográfica explican la brecha.',
                       gyn: 56 },
                     { region: 'Puno', rate: 116,
-                      desc: 'En la sierra sur, la altitud y la distancia complican cada emergencia obstétrica. Las regiones más aisladas pagan el precio de un sistema que no llega.',
+                      desc: 'Alta tasa a pesar de contar con más ginecólogos que otras regiones — la dispersión geográfica impide el acceso.',
                       gyn: 243 },
                     { region: 'Madre de Dios', rate: 109,
-                      desc: 'La región con mayor extensión por habitante tiene una de las tasas más altas del país. Lejos de todo, cerca del riesgo.',
+                      desc: 'Con apenas 11 ginecólogos para toda la región, la atención obstétrica especializada es casi inexistente fuera de Puerto Maldonado.',
                       gyn: 11 }
                 ]
             },
             {
                 id: 'mental', type: 'ratio',
                 unit: 'CASOS', specLabel: 'PSIQUIATRA',
-                patColor: '#47D7EF', specColor: '#C0392B',
+                patColor: '#4a7790', specColor: '#851f18',
                 cards: [
                     { region: 'La Libertad', n: 66, s: 1,
-                      desc: 'La región con mayor carga por psiquiatra. La crisis de salud mental no se ve, pero se acumula en listas de espera que no tienen fin.',
+                      desc: 'La Libertad duplica la carga promedio por psiquiatra. Segunda región más afectada después del Callao.',
                       note: '' },
                     { region: 'Callao', n: 65, s: 1,
-                      desc: 'A las puertas de Lima, una crisis ignorada en la periferia urbana. La proximidad a la capital no garantiza atención.',
+                      desc: 'El Callao tiene la segunda peor relación casos/psiquiatra del país, a pesar de ser una región urbana con mejor acceso en teoría.',
                       note: '' },
                     { region: 'Loreto', n: 56, s: 1,
-                      desc: 'La misma región con la peor mortalidad materna enfrenta también una crisis de salud mental sin respuesta del sistema.',
+                      desc: 'Loreto concentra brechas críticas en los tres grandes ejes del especial: cáncer, salud materna y salud mental simultáneamente.',
                       note: '' },
                     { region: 'Cusco', n: 51, s: 1,
-                      desc: 'El turismo impulsa la economía regional, pero la salud mental sigue siendo un servicio al que pocos pueden acceder.',
+                      desc: 'Cusco tiene la mayor carga de salud mental registrada fuera de Lima, con una relación casos/psiquiatra también crítica.',
                       note: '' }
                 ]
             },
@@ -966,7 +966,7 @@
                 id: 'brecha', type: 'multi',
                 cards: [
                     { region: 'Loreto',
-                      desc: 'La región donde todas las crisis convergen. La peor tasa de mortalidad materna del país, escasez crítica de oncólogos y una crisis de salud mental sin atención.',
+                      desc: 'La única región del país con brecha crítica simultánea en mortalidad materna, salud mental y cáncer. El caso más urgente del especial.',
                       metrics: [
                           { val: '194', label: 'muertes maternas por 100k nacidos' },
                           { val: '56', label: 'casos de salud mental por psiquiatra' },
@@ -974,14 +974,14 @@
                       ]
                     },
                     { region: 'Amazonas',
-                      desc: 'Una región que suma emergencias: alta mortalidad materna y una escasez severa de psiquiatras que deja sin cobertura a miles de personas.',
+                      desc: 'Amazonas combina alta mortalidad materna, ausencia de oncólogos y escasez de psiquiatras. Las tres brechas en una región de solo 432,000 personas.',
                       metrics: [
                           { val: '130', label: 'muertes maternas por 100k nacidos' },
                           { val: '17', label: 'psiquiatras en toda la región' }
                       ]
                     },
                     { region: 'Cajamarca',
-                      desc: 'Una región que acumula muertes maternas evitables, casos oncológicos sin atención y una crisis de salud mental silenciosa que el sistema no registra.',
+                      desc: 'Cajamarca acumula el mayor número de muertes maternas absolutas fuera de Lima, y su carga de salud mental por psiquiatra supera la media nacional.',
                       metrics: [
                           { val: '90', label: 'muertes maternas por 100k nacidos' },
                           { val: '16', label: 'muertes maternas registradas' },
@@ -1023,7 +1023,7 @@
 
         function makeSpecSVG(fill, sz) {
             sz = sz || 200;
-            var c = sz / 2, r = sz * 0.22;
+            var c = sz / 2, r = sz * 0.05;
             return '<svg width="' + sz + '" height="' + sz + '" viewBox="0 0 ' + sz + ' ' + sz + '"><circle cx="' + c + '" cy="' + c + '" r="' + r + '" fill="' + fill + '"/></svg>';
         }
 
@@ -1062,13 +1062,11 @@
                 '<div class="evz-viz">' +
                     '<div class="evz-viz-side">' +
                         makeDotSVG(card.n, 4, area.patColor, 200) +
-                        '<div class="evz-fig-num">' + card.n + '</div>' +
-                        '<div class="evz-fig-label">' + area.unit + '</div>' +
+                        '<div class="evz-fig-num">' + card.n + ' ' + area.unit + '</div>' +
                     '</div>' +
                     '<div class="evz-viz-side">' +
                         makeSpecSVG(area.specColor, 200) +
-                        '<div class="evz-fig-num">' + card.s + '</div>' +
-                        '<div class="evz-fig-label">' + area.specLabel + '</div>' +
+                        '<div class="evz-fig-num">' + card.s + ' ' + area.specLabel + '</div>' +
                     '</div>' +
                 '</div>' +
                 (card.note ? '<p class="evz-note">' + card.note + '</p>' : '') +
@@ -1079,11 +1077,11 @@
             var totalApprox = 314;
             var maxHighlight = Math.round(totalApprox * 0.25);
             var nHighlight = Math.round(card.rate / area.rateMax * maxHighlight);
-            var rateSvg = makePropDotSVG(nHighlight, '#C0392B', '#BFE9F5', 4, 200);
+            var rateSvg = makePropDotSVG(nHighlight, '#bbbbff', '#4a7790', 4, 200);
 
             if (card.gyn) {
                 // Side-by-side: mortalidad | ginecólogos (igual que cáncer/salud mental)
-                var gynSvg = makeDotSVG(card.gyn, 4, '#47D7EF', 200);
+                var gynSvg = makeDotSVG(card.gyn, 4, '#851f18', 200);
                 return '<div class="evz-card">' +
                     '<h3 class="evz-region">' + card.region + '</h3>' +
                     '<p class="evz-desc">' + card.desc + '</p>' +
