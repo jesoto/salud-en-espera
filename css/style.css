@@ -596,7 +596,7 @@ section.section-title{
 
         .panel-big-num {
             display: block;
-            font-size: 1.55rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #e85858;
             line-height: 1.1;
@@ -647,7 +647,7 @@ section.section-title{
         }
         .g-lbl-count {
             display: block;
-            font-size: 1.2rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: #e85858;
             margin-top: 3px;
