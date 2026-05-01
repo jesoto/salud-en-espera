@@ -838,8 +838,7 @@ section.section-title{
 /* ══════════════════════════════════════════════════════
    CASOS · HISTORIAS HUMANAS
 ══════════════════════════════════════════════════════ */
-.casos-section {
-    background: #f5f5f3;
+.casos-section {    
     overflow: hidden;
     padding: 50px 0 70px;
 }
@@ -855,6 +854,7 @@ section.section-title{
 
 .caso-card {
     background: #fff;
+    box-shadow: 0px 0px 15px #e8e8e8;
     border: 1px solid #ddd;
     border-radius: 6px;
     display: flex;
@@ -1877,7 +1877,7 @@ span.separador {
 
 .mapa-svg-wrap svg {
     display: block;
-    height: 780px;
+    height: 795px;
     width: 100%;
 }
 

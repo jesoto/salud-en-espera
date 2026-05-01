@@ -2890,6 +2890,11 @@
             var esp    = selEsp.value;
             if (!region) return;
             buildTabla(region, area, esp);
+            if (esp) {
+                setTimeout(function () {
+                    tablaWrap.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                }, 50);
+            }
         }
 
         function onMapClick(e) {
