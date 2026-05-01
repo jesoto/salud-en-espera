@@ -12,6 +12,15 @@
 </head>
 <body>
 
+    <!-- Rotate phone message for mobile portrait -->
+    <div class="rotate-phone" id="rotatePhone">
+        <div class="rotate-icon">
+            <img src="./img/rotar-movil.png" alt="" width="100%">
+        </div>
+        <h2>Mejor experiencia en horizontal</h2>
+        <p>Por favor, gira tu dispositivo para apreciar mejor la animación</p>
+    </div>
+
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
@@ -1877,7 +1886,21 @@
             }
         }, { passive: true });
 
+        const rotatePhone = document.getElementById('rotatePhone');
+        function checkOrientation() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isPortrait = window.innerHeight > window.innerWidth;
+            if (isMobile && isPortrait && !loading.classList.contains('hidden')) {
+                rotatePhone.classList.add('show');
+            } else {
+                rotatePhone.classList.remove('show');
+            }
+        }
+        checkOrientation();
+        window.addEventListener('orientationchange', () => { setTimeout(checkOrientation, 100); });
+
         window.addEventListener('resize', () => {
+            checkOrientation();
             if (isReady) updateFromScroll();
         });
     </script>
