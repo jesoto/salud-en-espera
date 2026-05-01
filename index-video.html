@@ -974,6 +974,103 @@
         </div>
     </section>
 
+    <!-- ══════════════════════════════════════════════════════
+         TÍTULO SECCIÓN 
+    ══════════════════════════════════════════════════════ -->
+    <section class="section-title">
+        <div class="box-title">
+            <div class="ctn-box-title">
+                <h3>Los medicamentos</h3>
+            </div>            
+        </div>
+        <div class="box-title cian">
+            <div class="ctn-box-title">
+                <h3>que no llegan <img src="./img/marca-seccion-8.png" alt="" width="100%" class="marca-seccion-8"></h3>
+            </div>
+        </div>
+    </section>
+
+    <div class="box-texto">
+        <p>
+            <span>El Nifedipino —usado para controlar la presión arterial y prevenir partos prematuros— está desabastecido en 23 de las 25 regiones del país.</span> La Epinefrina, que se usa en emergencias para revertir reacciones alérgicas graves, falta en 18. La Ergometrina, esencial para detener hemorragias postparto, en 19. No son medicamentos raros ni costosos: son la base de cualquier sistema de salud.
+        </p>
+        <p>
+            <span>En enero de 2023, solo el 77% de los medicamentos esenciales estaba disponible en los establecimientos públicos.</span> Para octubre de 2025 esa cifra había subido al 88%. Una mejora real, pero que sigue dejando a 1 de cada 8 medicamentos sin stock. ¿Qué medicamentos faltan?
+        </p>
+    </div>
+
+    <h2 class="titulo-flourish">Medicamentos básicos que faltan</h2>
+
+    <div class="med-top3">
+
+      <!-- NIFEDIPINO -->
+      <div class="med-card">
+        <div class="med-icon">
+            <img src="./img/icon-medicina.png" alt="" width="100%">
+        </div>
+        <div class="med-nombre">Nifedipino</div>
+        <div class="med-pct">92%</div>
+        <p class="med-desc">De regiones no cuentan con el medicamento para <strong>hipertensión arterial, preeclampsia, crisis hipertensiva</strong></p>
+      </div>
+
+      <!-- DIAZEPAM -->
+      <div class="med-card">
+        <div class="med-icon">
+            <img src="./img/icon-medicina.png" alt="" width="100%">
+        </div>
+        <div class="med-nombre">Diazepam</div>
+        <div class="med-pct">80%</div>
+        <p class="med-desc">De regiones no cuentan con el medicamento para <strong>ansiedad, insomnio, convulsiones, espasmos musculares</strong></p>
+      </div>
+
+      <!-- ERGOMETRINA -->
+      <div class="med-card">
+        <div class="med-icon">
+            <img src="./img/icon-medicina.png" alt="" width="100%">
+        </div>
+        <div class="med-nombre">Ergometrina</div>
+        <div class="med-pct">76%</div>
+        <p class="med-desc">De regiones no cuentan con el medicamento para <strong>hemorragias postparto, contracciones uterinas tras el parto</strong></p>
+      </div>
+
+    </div>
+
+    <div class="grafico-iframe-wrap">
+        <iframe id="desabastecimientoIframe" src="./graficos/desabastecimiento_tabla_contexto.html" width="100%" height="1700" frameborder="0" scrolling="no" title="Desabastecimiento de medicamentos por región"></iframe>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         SCRIPT · IFRAME DESABASTECIMIENTO
+    ══════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+        var iframe = document.getElementById('desabastecimientoIframe');
+        if (!iframe) return;
+        var fired = false;
+
+        function sendAnimate() {
+            if (fired) return;
+            fired = true;
+            // El iframe puede no haber cargado aún: esperamos load antes de postear
+            function post() { iframe.contentWindow.postMessage('animate-bars', '*'); }
+            if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+                post();
+            } else {
+                iframe.addEventListener('load', post, { once: true });
+            }
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) sendAnimate();
+        }, { threshold: 0.1 });
+
+        observer.observe(iframe);
+    })();
+    </script>  
+
+    <!-- ══════════════════════════════════════════════════════
+         SCRIPT · ENFERMEDAD VS ESPECIALISTAS
+    ══════════════════════════════════════════════════════ -->
     <script>
     (function () {
         /* ─── Data ─── */
