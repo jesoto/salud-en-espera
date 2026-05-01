@@ -453,6 +453,19 @@
         </div>
     </div>
 
+    <!-- Card de Mayté: entra por la derecha en la sección establecimientos defectuosos -->
+    <div class="mayte-card-fixed" id="mayteCard3">
+        <button class="mayte-close" id="mayteClose3" aria-label="Cerrar">✕</button>
+        <div class="mayte-card">
+            <div class="mayte-card-body">
+                <h4 class="mayte-titulo">Mayté explica</h4>
+                <img src="./img/mayte.png" alt="Mayté">
+                <hr class="mayte-hr">
+                <p class="mayte-texto">Un edificio viejo no es solo un problema estético. Es una sala de espera sin ventilación, un quirófano sin luz de respaldo, una posta que se inunda cuando llueve. Cuando el establecimiento falla, el primero en pagarlo es el paciente que no tiene otra opción.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- ══════════════════════════════════════════════════════
          SISTEMA DE SALUD · SUBSECTORES INTERACTIVO
     ══════════════════════════════════════════════════════ -->
@@ -1701,6 +1714,44 @@
         var card     = document.getElementById('mayteCard');
         var closeBtn = document.getElementById('mayteClose');
         var section  = document.querySelector('.sistema-section');
+        if (!card || !section) return;
+
+        var interacted = false;
+
+        closeBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            interacted = true;
+            card.classList.remove('is-open');
+            card.classList.add('is-peeking');
+        });
+
+        card.addEventListener('click', function () {
+            if (card.classList.contains('is-peeking')) {
+                card.classList.remove('is-peeking');
+                card.classList.add('is-open');
+            }
+        });
+
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+                card.classList.add(interacted ? 'is-peeking' : 'is-open');
+            } else {
+                card.classList.remove('is-open', 'is-peeking');
+            }
+        }, { threshold: 0.15 });
+
+        observer.observe(section);
+    })();
+    </script>
+
+    <!-- ══════════════════════════════════════════════════════
+         SCRIPT · MAYTÉ CARD 3 (establecimientos defectuosos)
+    ══════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+        var card     = document.getElementById('mayteCard3');
+        var closeBtn = document.getElementById('mayteClose3');
+        var section  = document.getElementById('establecimientos');
         if (!card || !section) return;
 
         var interacted = false;
