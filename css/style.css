@@ -1105,6 +1105,96 @@ a.caso-btn-link:hover { background: #2a2a2a; }
 }
 
 /* ══════════════════════════════════════════════════════
+   VOZ FINAL · "EL SISTEMA QUE MERECEMOS"
+══════════════════════════════════════════════════════ */
+.voz-section {
+    max-width: 790px;
+    margin: 60px auto 70px;
+    padding: 0 28px;
+}
+.voz-hr {
+    border: none;
+    border-top: 1.5px solid #ddd;
+    margin: 0;
+}
+.voz-inner {
+    display: flex;
+    align-items: center;
+    gap: 52px;
+    padding: 44px 0;
+}
+.voz-avatar {
+    flex-shrink: 0;
+}
+.voz-ring-outer {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: #f5d0c8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.voz-ring-inner {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #b34237;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+.voz-ring-inner img {
+    width: 158px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: bottom center;
+}
+.voz-content {
+    flex: 1;
+    min-width: 0;
+}
+.voz-titulo {
+    font: 600 2rem/1.2 "ivypresto-headline";
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+.voz-meta {
+    font: 600 0.82rem/1.5 'Isidora Sans SemiBold';
+    color: #555;
+    margin-bottom: 10px;
+}
+.voz-quote {
+    font: 1.05rem/1.65 'Isidora Medium';
+    color: #1a1a1a;
+    margin: 0 0 22px;
+    border: none;
+    padding: 0;
+}
+.voz-audio-wrap {
+    background: #eeecea;
+    border-radius: 8px;
+    max-width: 340px;
+    padding: 10px 12px;
+}
+@media (max-width: 680px) {
+    .voz-inner {
+        flex-direction: column;
+        gap: 24px;
+        padding: 32px 0;
+        text-align: center;
+    }
+    .voz-ring-outer { width: 150px; height: 150px; }
+    .voz-ring-inner { width: 122px; height: 122px; }
+    .voz-ring-inner img { width: 112px; }
+    .voz-titulo { font-size: 1.5rem; }
+    .voz-audio-wrap { max-width: 100%; }
+}
+
+/* ══════════════════════════════════════════════════════
    MEDICAMENTOS · TOP 3
 ══════════════════════════════════════════════════════ */
 .med-top3 {
