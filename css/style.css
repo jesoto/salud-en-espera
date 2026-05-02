@@ -2666,6 +2666,17 @@ span.separador {
         padding-left: 5px;
     }
 
+    .sistema-section .box-fuente,
+    .ec-grid .box-fuente{
+        padding: 0;
+    }
+    .mapa-section .box-fuente,
+    .box-flourish .fuente-atendidos,
+    #evz-section-viz .box-fuente,
+    #brecha-section .box-fuente{
+        padding: 20px 0 0;
+    }
+
 }
 
 /* ============================================
