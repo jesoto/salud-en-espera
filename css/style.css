@@ -1377,13 +1377,34 @@ span.separador {
 }
 .med-icon {
     width: 130px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
     .med-icon img {
         height: 100%;
         max-width: 90px;
         object-fit: contain;
-        width: 100%;        
+        width: 100%;
     }
+.med-badge {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 34px;
+    height: 34px;
+    background: #E5553F;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font: 700 1rem/1 'Isidora Bold', sans-serif;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,.18);
+    z-index: 1;
+}
 .med-nombre {
     font: 700 1.1rem/1.2 'Isidora Bold', sans-serif;
     color: #1a1a1a;

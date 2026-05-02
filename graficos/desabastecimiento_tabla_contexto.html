@@ -35,6 +35,32 @@
   }
   .name { font-weight: 700; }
   .sub { color:#666; font-size:12px; margin-top:2px }
+  .row-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .row-num.orange {
+    background: #E5553F;
+    color: #fff;
+  }
+  .row-num.black {
+    background: transparent;
+    color: #222;
+    border: 2px solid #222;
+  }
+  .name-cell {
+    display: flex;
+    align-items: center;
+  }
   .bar-container {
     width: 100%;
     height: 14px;
@@ -119,13 +145,20 @@ const data = [
 ];
 
 const tbody = document.getElementById("table-body");
-data.forEach(d => {
+data.forEach((d, i) => {
   const pct = ((d.des / TOTAL) * 100).toFixed(0);
+  const num = i + 1;
+  const badgeClass = num <= 3 ? "orange" : "black";
   const tr = document.createElement("tr");
   tr.innerHTML = `
     <td>
-      <div class="name">${d.medicamento}</div>
-      <div class="sub">${d.uso}</div>
+      <div class="name-cell">
+        <span class="row-num ${badgeClass}">${num}</span>
+        <div>
+          <div class="name">${d.medicamento}</div>
+          <div class="sub">${d.uso}</div>
+        </div>
+      </div>
     </td>
     <td>
       <div class="bar-container" role="img" aria-label="${d.medicamento}: ${d.des} de ${TOTAL} regiones desabastecidas">
