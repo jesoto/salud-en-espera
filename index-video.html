@@ -954,6 +954,19 @@
         </p>
     </div>
 
+    <!-- Card de Mayté: sección ¿Cuántas personas atiende cada prestador? -->
+    <div class="mayte-card-fixed" id="mayteCard5">
+        <button class="mayte-close" id="mayteClose5" aria-label="Cerrar">✕</button>
+        <div class="mayte-card">
+            <div class="mayte-card-body">
+                <h4 class="mayte-titulo">Mayté explica</h4>
+                <img src="./img/mayte.png" alt="Mayté">
+                <hr class="mayte-hr">
+                <p class="mayte-texto">Atendidos y atenciones no son lo mismo. Una persona puede ir al médico varias veces cada visita cuenta como una atención distinta. En total, en el 2025, el sistema registró casi 118 millones de atenciones, pero eso no significa que llegó a 118 millones de personas diferentes.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- ══════════════════════════════════════════════════════
          ESSALUD · GRUPOS ETÁREOS
     ══════════════════════════════════════════════════════ -->
@@ -1653,7 +1666,7 @@
             var totalApprox = 314;
             var maxHighlight = Math.round(totalApprox * 0.25);
             var nHighlight = Math.round(card.rate / area.rateMax * maxHighlight);
-            var rateSvg = makePropDotSVG(nHighlight, '#ffa8b2', 'transparent', 4, 200);
+            var rateSvg = makePropDotSVG(nHighlight, '#4a7790', 'transparent', 4, 200);
 
             if (card.gyn) {
                 // Side-by-side: mortalidad | ginecólogos (igual que cáncer/salud mental)
@@ -2859,6 +2872,44 @@
         var card     = document.getElementById('mayteCard3');
         var closeBtn = document.getElementById('mayteClose3');
         var section  = document.getElementById('establecimientos');
+        if (!card || !section) return;
+
+        var interacted = false;
+
+        closeBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            interacted = true;
+            card.classList.remove('is-open');
+            card.classList.add('is-peeking');
+        });
+
+        card.addEventListener('click', function () {
+            if (card.classList.contains('is-peeking')) {
+                card.classList.remove('is-peeking');
+                card.classList.add('is-open');
+            }
+        });
+
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+                card.classList.add(interacted ? 'is-peeking' : 'is-open');
+            } else {
+                card.classList.remove('is-open', 'is-peeking');
+            }
+        }, { threshold: 0.15 });
+
+        observer.observe(section);
+    })();
+    </script>
+
+    <!-- ══════════════════════════════════════════════════════
+         SCRIPT · MAYTÉ CARD 5 (atendidos vs atenciones)
+    ══════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+        var card     = document.getElementById('mayteCard5');
+        var closeBtn = document.getElementById('mayteClose5');
+        var section  = document.getElementById('esSection');
         if (!card || !section) return;
 
         var interacted = false;
