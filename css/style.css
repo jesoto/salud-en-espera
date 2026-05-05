@@ -943,18 +943,53 @@ section.section-title{
     white-space: nowrap;
 }
 
-.caso-title-bar {
-    background: #F04F25;
-    border-radius: 2px;
-    color: #fff;
-    font: 1rem/1.35 'Isidora Sans SemiBold';
-    margin: 0 20px;
-    padding: 10px 14px;
+.caso-meta {
+    padding: 4px 20px 0;
+}
+
+.caso-name {
+    font: 1.45rem/1.1 'Isidora Bold';
+    color: #111;
+    margin-bottom: 3px;
+}
+
+.caso-city {
+    font: 0.9rem/1.3 'Isidora Medium';
+    color: #555;
+    margin-bottom: 14px;
+}
+
+.caso-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.caso-field {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.caso-field-label {
+    font: 0.78rem/1 'Isidora Medium';
+    color: #888;
+}
+
+.caso-field-value {
+    font: 0.95rem/1.3 'Isidora Bold';
+    color: #E5553F;
+}
+
+.caso-divider {
+    border: none;
+    border-top: 1px solid #e8e4dc;
+    margin: 16px 20px;
 }
 
 .caso-body {
     flex: 1;
-    padding: 16px 20px 0;
+    padding: 0 20px 0;
 }
 
 .caso-text {
