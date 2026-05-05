@@ -2437,16 +2437,23 @@
         const prov    = ES_PROVIDERS[key];
         const nValues = computeNValues(prov.counts);
 
-        // Reassign figures to groups proportionally
+        // Reassign figures to groups proportionally and update their images
         let figIdx = 0;
         ES_GROUPS.forEach((g, gi) => {
             g.n     = nValues[gi];
             g.count = prov.counts[gi];
             g.figs  = [];
             for (let fi = 0; fi < g.n && figIdx < esFigures.length; fi++, figIdx++) {
-                const fig = esFigures[figIdx];
-                fig.g = g;
+                const fig  = esFigures[figIdx];
+                fig.g      = g;
+                fig.fi     = fi;
                 g.figs.push(fig);
+                const cfg  = ES_IMGS[g.type];
+                const dim  = ES_DIM[g.type];
+                const img  = fig.el.querySelector('img');
+                img.src    = cfg.srcs[fi % cfg.srcs.length];
+                img.width  = cfg.w ?? dim.w;
+                img.height = cfg.h ?? dim.h;
             }
         });
 
