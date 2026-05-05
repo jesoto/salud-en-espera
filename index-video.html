@@ -554,8 +554,13 @@
                 <h3 class="subsectores-h3">Subsectores/Prestadores</h3>
                 <p class="subsectores-intro">En el Perú, no existe un solo sistema de salud sino varios que funcionan en paralelo:</p>
 
-                <p class="niveles-hint" style="margin: 0 auto; display: block; text-align: center;">Selecciona <img src="./img/icon-click.png" alt="" width="15" aria-hidden="true"></p>
+                <p class="niveles-hint" style="margin: 0 auto; display: block; text-align: center;">
+                    <span class="hint-desktop">Selecciona <img src="./img/icon-click.png" alt="" width="15" aria-hidden="true"></span>
+                    <span class="hint-mobile">Desliza y selecciona <img src="./img/icon-click.png" alt="" width="15" aria-hidden="true"></span>
+                </p>
 
+                <div class="ss-carousel-wrap">
+                <button class="ss-carousel-prev" aria-label="Anterior">&#8249;</button>
                 <div class="subsectores-grid">
                     <button class="subsector-btn js-subsector" data-subsector="0">
                         <div class="ss-icon"><img src="./img/icon-hospital-1.png" alt=""></div>
@@ -583,6 +588,8 @@
                         <span class="ss-desc">Clínicas, consultorios y ONGs. Las EPS y aseguradoras privadas canalizan a sus asegurados hacia esta red.</span>
                     </button>
                 </div>
+                <button class="ss-carousel-next" aria-label="Siguiente">&#8250;</button>
+                </div><!-- /ss-carousel-wrap -->
 
                 <!-- Panel: MINSA -->
                 <div class="ss-detail" id="ssDetail0">
@@ -1009,7 +1016,8 @@
             <div class="es-filter" id="esFilter">
                 <span class="es-filter-label">Ver por prestador de salud</span>
                 <div class="es-filter-btns">
-                    <button class="es-filter-btn is-active" data-provider="essalud">EsSalud</button>
+                    <button class="es-filter-btn is-active" data-provider="total">Total</button>
+                    <button class="es-filter-btn" data-provider="essalud">EsSalud</button>
                     <button class="es-filter-btn" data-provider="sis">SIS</button>
                     <button class="es-filter-btn" data-provider="ffaa">FF.AA.</button>
                     <button class="es-filter-btn" data-provider="privados">Privados</button>
@@ -1170,13 +1178,13 @@
                         <option value="">— Selecciona —</option>
                     </select>
                 </div>
-                <div class="mapa-filtro">
+                <div class="mapa-filtro" style="display: none;">
                     <label class="mapa-label" for="brechaEnf">Área de salud</label>
                     <select class="mapa-select" id="brechaEnf" disabled>
                         <option value="">— Selecciona región primero —</option>
                     </select>
                 </div>
-                <div class="mapa-filtro">
+                <div class="mapa-filtro" style="display: none;">
                     <label class="mapa-label" for="brechaEsp">Especialista</label>
                     <select class="mapa-select" id="brechaEsp" disabled>
                         <option value="">— Selecciona área primero —</option>
@@ -1252,7 +1260,7 @@
       <div class="med-card">
         <div class="med-icon">
             <span class="med-badge">1</span>
-            <img src="./img/icon-medicina.png" alt="" width="100%">
+            <img src="./img/bg-slide-3.jpg" alt="" width="100%">
         </div>
         <div class="med-nombre">Nifedipino</div>
         <div class="med-pct">92%</div>
@@ -1263,7 +1271,7 @@
       <div class="med-card">
         <div class="med-icon">
             <span class="med-badge">2</span>
-            <img src="./img/icon-medicina.png" alt="" width="100%">
+            <img src="./img/bg-slide-3.jpg" alt="" width="100%">
         </div>
         <div class="med-nombre">Diazepam</div>
         <div class="med-pct">80%</div>
@@ -1274,7 +1282,7 @@
       <div class="med-card">
         <div class="med-icon">
             <span class="med-badge">3</span>
-            <img src="./img/icon-medicina.png" alt="" width="100%">
+            <img src="./img/bg-slide-3.jpg" alt="" width="100%">
         </div>
         <div class="med-nombre">Ergometrina</div>
         <div class="med-pct">76%</div>
@@ -1327,7 +1335,7 @@
             <div class="voz-avatar">
                 <div class="voz-ring-outer">
                     <div class="voz-ring-inner">
-                        <img src="./img/mayte.png" alt="María">
+                        <img src="./img/mayte-footer.png" alt="María">
                     </div>
                 </div>
             </div>
@@ -1516,7 +1524,7 @@
                 rateMax: 194,
                 rateLabel: 'por 100,000 nacidos vivos',
                 cards: [
-                    { region: 'Loreto', rate: 194,
+                    { region: 'Loreto', rate: 194, lima: 28,
                       desc: 'En Loreto, la tasa de mortalidad materna es de 194 muertes por cada 100,000 nacidos vivos. En Lima, es de 28. Casi 7 veces menos. La meta que el Perú se comprometió a alcanzar en 2030 con los ODS es 70 — Loreto casi la triplica.',
                       gyn: null },
                     { region: 'Amazonas', rate: 130,
@@ -1687,7 +1695,29 @@
                 '</div>';
             }
 
-            // Sin datos de ginecólogos: visualización centrada (ej. Loreto)
+            // Con comparación Lima: layout side-by-side
+            if (card.lima !== undefined) {
+                var limaNHighlight = card.lima;
+                var limaSvg = makePropDotSVG(limaNHighlight, '#851f18', 'transparent', 4, 200);
+                return '<div class="evz-card">' +
+                    '<h3 class="evz-region">' + card.region + '</h3>' +
+                    '<p class="evz-desc">' + card.desc + '</p>' +
+                    '<div class="evz-viz">' +
+                        '<div class="evz-viz-side">' +
+                            rateSvg +
+                            '<div class="evz-fig-num">' + card.rate + '</div>' +
+                            '<div class="evz-fig-label">muertes maternas ' + area.rateLabel + '</div>' +
+                        '</div>' +
+                        '<div class="evz-viz-side">' +
+                            limaSvg +
+                            '<div class="evz-fig-num">' + card.lima + '</div>' +
+                            '<div class="evz-fig-label">muertes maternas en Lima ' + area.rateLabel + '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+            }
+
+            // Sin datos adicionales: visualización centrada
             return '<div class="evz-card">' +
                 '<h3 class="evz-region">' + card.region + '</h3>' +
                 '<p class="evz-desc">' + card.desc + '</p>' +
@@ -1879,6 +1909,8 @@
         let currentStatIndex  = 0;
         let statRotationInterval;
         let activeBg          = 'A';
+        const MIN_LOADING_MS  = 4000;
+        const loadingShownAt  = Date.now();
 
         /* ─────────────────────────────────────────────
            SEEK INTELIGENTE
@@ -2010,10 +2042,14 @@
         }
 
         function showExperience() {
-            isReady = true;
-            clearInterval(statRotationInterval);
-            loading.classList.add('hidden');
-            updateFromScroll();
+            const elapsed = Date.now() - loadingShownAt;
+            const delay   = Math.max(0, MIN_LOADING_MS - elapsed);
+            setTimeout(() => {
+                isReady = true;
+                clearInterval(statRotationInterval);
+                loading.classList.add('hidden');
+                updateFromScroll();
+            }, delay);
         }
 
         /* ─────────────────────────────────────────────
@@ -2073,14 +2109,14 @@
        DATA
     ──────────────────────────────────────────── */
     const ES_GROUPS = [
-        { label: 'Neonatos',     sub: '0 – 28 días',   count: 40364,  color: '#4DBAEC', type: 'baby',     n: 4  },
-        { label: 'Lactantes',    sub: '1 mes – 1 año', count: 68342,  color: '#EC9B4D', type: 'toddler',  n: 7  },
-        { label: 'Niños',        sub: '1 – 14 años',   count: 122313, color: '#4DCC8A', type: 'child',    n: 12 },
-        { label: 'Adolescentes', sub: '15 – 17 años',  count: 61567,  color: '#EC4DAB', type: 'teen',     n: 6  },
-        { label: 'Jóvenes',      sub: '18 – 29 años',  count: 51477,  color: '#9C4DEC', type: 'youth',    n: 5  },
-        { label: 'Adultos',      sub: '30 – 59 años',  count: 66108,  color: '#E8C24D', type: 'adult',    n: 7  },
-        { label: 'Ad. Mayores',  sub: '60 – 79 años',  count: 260379, color: '#4D7EEC', type: 'adult-m',  n: 26 },
-        { label: 'Mayores',      sub: '80+ años',       count: 182478, color: '#EC5858', type: 'elderly',  n: 18 },
+        { label: 'Neonatos',     sub: '0 – 28 días',   count: 591881,  color: '#4DBAEC', type: 'baby',     n: 2  },
+        { label: 'Lactantes',    sub: '1 mes – 1 año', count: 564544,  color: '#EC9B4D', type: 'toddler',  n: 2  },
+        { label: 'Niños',        sub: '1 – 14 años',   count: 1750462, color: '#4DCC8A', type: 'child',    n: 7  },
+        { label: 'Adolescentes', sub: '15 – 17 años',  count: 2340243, color: '#EC4DAB', type: 'teen',     n: 10 },
+        { label: 'Jóvenes',      sub: '18 – 29 años',  count: 2046670, color: '#9C4DEC', type: 'youth',    n: 9  },
+        { label: 'Adultos',      sub: '30 – 59 años',  count: 3586559, color: '#E8C24D', type: 'adult',    n: 15 },
+        { label: 'Ad. Mayores',  sub: '60 – 79 años',  count: 6910392, color: '#4D7EEC', type: 'adult-m',  n: 28 },
+        { label: 'Mayores',      sub: '80+ años',       count: 2893504, color: '#EC5858', type: 'elderly',  n: 12 },
     ];
 
     /* ────────────────────────────────────────────
@@ -2131,6 +2167,10 @@
     const ES_ALL_TOTAL = 20684255; // EsSalud + SIS + FFAA + Privados
 
     const ES_PROVIDERS = {
+        total: {
+            label: 'Total', total: 20684255,
+            counts: [591881, 564544, 1750462, 2340243, 2046670, 3586559, 6910392, 2893504]
+        },
         essalud: {
             label: 'EsSalud', total: 853028,
             counts: [40364, 68342, 122313, 61567, 51477, 66108, 260379, 182478]
@@ -2347,11 +2387,11 @@
                 // Blob / transition view: restore all-providers total
                 document.querySelector('.panel-big-num').textContent = ES_ALL_TOTAL.toLocaleString('es-PE');
             } else if (!esFilterFirstShown) {
-                // First time filter appears: initialize with EsSalud
+                // First time filter appears: initialize with total
                 esFilterFirstShown = true;
-                esCurrentTotal     = ES_PROVIDERS.essalud.total;
-                esActiveProvider   = 'essalud';
-                document.querySelector('.panel-big-num').textContent = ES_PROVIDERS.essalud.total.toLocaleString('es-PE');
+                esCurrentTotal     = ES_PROVIDERS.total.total;
+                esActiveProvider   = 'total';
+                document.querySelector('.panel-big-num').textContent = ES_PROVIDERS.total.total.toLocaleString('es-PE');
             } else {
                 // Scrolled back then forward: restore current provider total
                 document.querySelector('.panel-big-num').textContent = esCurrentTotal.toLocaleString('es-PE');
@@ -2413,10 +2453,10 @@
                 const filterEl = document.getElementById('esFilter');
                 if (filterEl && !esFilterFirstShown) {
                     esFilterFirstShown = true;
-                    esCurrentTotal     = ES_PROVIDERS.essalud.total;
-                    esActiveProvider   = 'essalud';
+                    esCurrentTotal     = ES_PROVIDERS.total.total;
+                    esActiveProvider   = 'total';
                     filterEl.classList.add('visible');
-                    document.querySelector('.panel-big-num').textContent = ES_PROVIDERS.essalud.total.toLocaleString('es-PE');
+                    document.querySelector('.panel-big-num').textContent = ES_PROVIDERS.total.total.toLocaleString('es-PE');
                 }
             }, ES_GROUPS.length * 260 + 600);
         }, { threshold: 0.25 });
@@ -2554,10 +2594,69 @@
                 if (!isOpen) {
                     btn.classList.add('is-active');
                     details[n].classList.add('is-open');
-                    details[n].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    if (window.innerWidth >= 768) {
+                        details[n].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
                 }
             });
         });
+    })();
+    </script>
+
+    <!-- ══════════════════════════════════════════════════════
+         SCRIPT · SUBSECTORES CAROUSEL (mobile)
+    ══════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+        var grid    = document.querySelector('.subsectores-grid');
+        var prevBtn = document.querySelector('.ss-carousel-prev');
+        var nextBtn = document.querySelector('.ss-carousel-next');
+        var btns    = Array.from(document.querySelectorAll('.js-subsector'));
+        if (!grid || !prevBtn) return;
+
+        var total = btns.length;
+        var idx   = 0;
+
+        function isMobile() { return window.innerWidth < 768; }
+
+        function updateArrows() {
+            prevBtn.disabled = idx === 0;
+            nextBtn.disabled = idx === total - 1;
+        }
+
+        function goTo(i, smooth) {
+            idx = Math.max(0, Math.min(total - 1, i));
+            var w = grid.offsetWidth;
+            if (smooth === false) {
+                var prev = grid.style.scrollBehavior;
+                grid.style.scrollBehavior = 'auto';
+                grid.scrollLeft = idx * w;
+                grid.style.scrollBehavior = '';
+            } else {
+                grid.scrollLeft = idx * w;
+            }
+            updateArrows();
+        }
+
+        prevBtn.addEventListener('click', function () { if (isMobile()) goTo(idx - 1); });
+        nextBtn.addEventListener('click', function () { if (isMobile()) goTo(idx + 1); });
+
+        // Sync index after native swipe settles
+        var scrollTimer;
+        grid.addEventListener('scroll', function () {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(function () {
+                if (!isMobile()) return;
+                var w = grid.offsetWidth;
+                if (w > 0) { idx = Math.round(grid.scrollLeft / w); updateArrows(); }
+            }, 250);
+        }, { passive: true });
+
+        window.addEventListener('resize', function () {
+            if (isMobile()) goTo(idx, false);
+        });
+
+        updateArrows();
     })();
     </script>
 
