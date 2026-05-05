@@ -1133,7 +1133,6 @@ a.caso-btn-link:hover { background: #2a2a2a; }
             .es-sticky {
                 position: relative;
                 height: auto;
-                overflow-x: scroll;
             }
             .es-header {
                 padding: 1rem 1.2rem 0.75rem;
@@ -1143,6 +1142,7 @@ a.caso-btn-link:hover { background: #2a2a2a; }
             }
             .es-panels {
                 flex-direction: column;
+                overflow-x: scroll;
             }
             .panel-patients {
                 flex: none;
@@ -2449,7 +2449,7 @@ span.separador {
 .np-dl dd { margin: 0; }
 
 @media (max-width: 767px) {
-    .niveles-section { padding: 40px 0 0; margin: 60px 0 0;}
+    .niveles-section { padding: 40px 0 0; margin: 60px 0 40px;}
     .niveles-inner { padding: 0 16px; }
     .niveles-header h2 { font-size: 1.5rem; }
     .niveles-btns { gap: 8px; }
