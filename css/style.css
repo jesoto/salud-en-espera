@@ -2145,8 +2145,14 @@ span.separador {
     flex-wrap: wrap;
 }
 
-.brecha-resultado {
+.brecha-right-col {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.brecha-resultado {
     padding-top: 20px;
 }
 
@@ -2199,8 +2205,7 @@ span.separador {
 
 /* Tabla */
 .brecha-tabla-wrap {
-    margin: 36px auto 0;
-    max-width: 820px;
+    margin-top: 24px;
     overflow-x: auto;
 }
 
@@ -2771,6 +2776,10 @@ span.separador {
     #evz-section-viz .box-fuente,
     #brecha-section .box-fuente{
         padding: 20px 0 0;
+    }
+
+    .brecha-right-col{
+        width: 100%;
     }
 
     

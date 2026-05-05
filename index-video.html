@@ -1155,7 +1155,7 @@
         </div>
     </section>
 
-    <h2 class="titulo-flourish">Personal que falta por región</h2>
+    <h2 class="titulo-flourish">Personal de salud por región: oncología, salud mental y maternidad</h2>
 
     <!-- ══════════════════════════════════════════════════════
          BRECHA · MAPA ESPECIALISTAS POR REGIÓN
@@ -1188,26 +1188,27 @@
                 <div class="mapa-svg-wrap" id="brechaSvgWrap">
                     <!-- SVG cargado por JS -->
                 </div>
-                <div class="brecha-resultado" id="brechaResultado">
-                    <p class="mapa-placeholder">Selecciona una región para ver la brecha de especialistas.</p>
+                <div class="brecha-right-col">
+                    <div class="brecha-resultado" id="brechaResultado">
+                        <p class="mapa-placeholder">Selecciona una región para ver la brecha de especialistas.</p>
+                    </div>
+                    <div class="brecha-tabla-wrap" id="brechaTablaWrap" hidden>
+                        <table class="brecha-tabla" id="brechaTabla">
+                            <thead>
+                                <tr>
+                                    <th>Área</th>
+                                    <th>Especialista</th>
+                                    <th>1° nivel</th>
+                                    <th>2° nivel</th>
+                                    <th>3° nivel</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="brechaTablaBody"></tbody>
+                        </table>
+                        <p class="brecha-fuente">Fuente: MINSA RRHH 2025 · 1er nivel = postas y centros de salud · 2do nivel = hospitales generales · 3er nivel = institutos especializados</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="brecha-tabla-wrap" id="brechaTablaWrap" hidden>
-                <table class="brecha-tabla" id="brechaTabla">
-                    <thead>
-                        <tr>
-                            <th>Área</th>
-                            <th>Especialista</th>
-                            <th>1° nivel</th>
-                            <th>2° nivel</th>
-                            <th>3° nivel</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody id="brechaTablaBody"></tbody>
-                </table>
-                <p class="brecha-fuente">Fuente: MINSA RRHH 2025 · 1er nivel = postas y centros de salud · 2do nivel = hospitales generales · 3er nivel = institutos especializados</p>
             </div>
 
         </div>
@@ -1516,10 +1517,10 @@
                 rateLabel: 'por 100,000 nacidos vivos',
                 cards: [
                     { region: 'Loreto', rate: 194,
-                      desc: 'Loreto tiene una tasa de mortalidad materna casi 7 veces la de Lima y casi 3 veces la meta que el Perú se comprometió a alcanzar en 2030.',
+                      desc: 'En Loreto, la tasa de mortalidad materna es de 194 muertes por cada 100,000 nacidos vivos. En Lima, es de 28. Casi 7 veces menos. La meta que el Perú se comprometió a alcanzar en 2030 con los ODS es 70 — Loreto casi la triplica.',
                       gyn: null },
                     { region: 'Amazonas', rate: 130,
-                      desc: 'Segunda TMM más alta del país. Pocos ginecólogos y alta dispersión geográfica explican la brecha.',
+                      desc: 'Segunda tasa de mortalidad materna más alta del país. Pocos ginecólogos y alta dispersión geográfica explican la brecha.',
                       gyn: 56 },
                     { region: 'Puno', rate: 116,
                       desc: 'Alta tasa a pesar de contar con más ginecólogos que otras regiones — la dispersión geográfica impide el acceso.',
