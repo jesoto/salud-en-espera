@@ -2305,7 +2305,7 @@ span.separador {
 }
 
 .niveles-header h2 {
-    font: 2.2rem/1.1 'Isidora Bold', sans-serif;
+    font: 1.5rem / 1.1 'Isidora Bold', sans-serif;
     margin-bottom: 8px;
 }
 
@@ -2332,8 +2332,8 @@ span.separador {
     color: #111;
     cursor: pointer;
     flex: 1;
-    font: 1.4rem / 1 'Isidora Bold';
-    max-width: 152px;
+    font: 1rem / 1 'Isidora Bold';
+    max-width: 124px;
     padding: 9px 10px;
     transition: background 0.2s, color 0.2s;
     -webkit-tap-highlight-color: transparent;
