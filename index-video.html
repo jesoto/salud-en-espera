@@ -782,16 +782,13 @@
 
     <div class="box-texto">
         <p>
-            <span>En el Hospital San Juan de Lurigancho, conseguir una cita con un especialista puede tomar hasta 57 días.</span> En el Hospital de Pichanaki, en Junín, esperar sentado el día de tu cita significa quedarte ahí más de tres horas. Son datos del propio MINSA, medidos en 2025, en establecimientos de Lima y regiones. 
+            <span>En el Hospital San Juan de Lurigancho, conseguir una cita con un especialista puede tomar hasta 57 días. </span> En el Hospital de Pichanaki, en Junín, esperar sentado el día de tu cita significa quedarte ahí más de tres horas. Son datos del propio MINSA, medidos en 2025, en establecimientos de Lima y regiones. 
         </p>
         <p>
-            El diferimiento <span> — el tiempo promedio entre que pides una cita y te atienden— es de 23 días en EsSalud a nivel nacional.</span> En algunas redes regionales supera el mes.
-        </p>
-        <p>
-            La herramienta que sigue muestra datos registrados por el MINSA y EsSalud: <span>cuántos días esperas en promedio para conseguir una cita</span>, según la región, el prestador de servicio y la especialidad.
+            El diferimiento <span> — el tiempo promedio entre que pides una cita y te atienden — es de 23 días en EsSalud a nivel nacional.</span> En algunas redes regionales supera el mes.
         </p>
 
-        <h4>La espera no termina con la cita</h4>
+        <h4>La espera no termina con la cita en el MINSA</h4>
         <p>
             <span>Esperar para ver al médico es solo el primer obstáculo. Después vienen las imágenes, el laboratorio, la farmacia</span> — cada uno con su propia cola. Estos cuatro datos muestran que la demora no está en un solo punto del Minsa: está en todos.
         </p>
@@ -2086,81 +2083,24 @@
     ];
 
     /* ────────────────────────────────────────────
-       SVG FIGURE TEMPLATES  (fill="currentColor")
+       FIGURE IMAGE SETS  (alternated by fig index)
+       srcs  → array de imágenes que se alternan
+       w / h → tamaño visual del <img>; si se omite
+               usa ES_DIM (que controla el layout)
     ──────────────────────────────────────────── */
-    const ES_SV = {
-        baby: `<svg viewBox="0 0 36 22" width="36" height="22" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="8.5" cy="11" r="9" fill="currentColor"/>
-            <ellipse cx="24" cy="11" rx="12" ry="7.5" fill="currentColor" opacity="0.86"/>
-            <circle cx="6"  cy="9" r="1.5" fill="rgba(0,0,0,.22)"/>
-            <circle cx="11" cy="9" r="1.5" fill="rgba(0,0,0,.22)"/>
-            <path d="M 6.5 14 Q 8.5 16.5 10.5 14" fill="none" stroke="rgba(0,0,0,.2)" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>`,
-
-        toddler: `<svg viewBox="0 0 28 32" width="24" height="27" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="14" cy="8" r="7.5" fill="currentColor"/>
-            <ellipse cx="14" cy="21" rx="8.5" ry="7" fill="currentColor" opacity="0.86"/>
-            <ellipse cx="4.5" cy="28" rx="5.5" ry="3" fill="currentColor" opacity="0.73"/>
-            <ellipse cx="23.5" cy="28" rx="5.5" ry="3" fill="currentColor" opacity="0.73"/>
-            <circle cx="10.5" cy="7" r="1.5" fill="rgba(0,0,0,.22)"/>
-            <circle cx="17.5" cy="7" r="1.5" fill="rgba(0,0,0,.22)"/>
-        </svg>`,
-
-        child: `<svg viewBox="0 0 20 44" width="17" height="38" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="10" cy="6" r="5.8" fill="currentColor"/>
-            <rect x="4"   y="12" width="12" height="13" rx="2.5" fill="currentColor" opacity="0.88"/>
-            <rect x="4.5" y="25" width="11" height="5"  rx="1.5" fill="currentColor" opacity="0.68"/>
-            <rect x="4.5" y="30" width="5"  height="13" rx="2"   fill="currentColor" opacity="0.80"/>
-            <rect x="10.5" y="30" width="5" height="13" rx="2"   fill="currentColor" opacity="0.80"/>
-        </svg>`,
-
-        teen: `<svg viewBox="0 0 18 52" width="15" height="44" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="9" cy="5.5" r="5.3" fill="currentColor"/>
-            <ellipse cx="14.5" cy="3.5" rx="3.5" ry="2.2" fill="currentColor" opacity="0.48"/>
-            <rect x="3.5" y="11" width="11" height="13" rx="2.5" fill="currentColor" opacity="0.88"/>
-            <path d="M 2.5 24 L 15.5 24 L 18 43 L 0 43 Z" fill="currentColor" opacity="0.77"/>
-            <rect x="2.5"  y="43" width="5" height="8.5" rx="2.5" fill="currentColor" opacity="0.77"/>
-            <rect x="10.5" y="43" width="5" height="8.5" rx="2.5" fill="currentColor" opacity="0.77"/>
-        </svg>`,
-
-        youth: `<svg viewBox="0 0 18 52" width="15" height="44" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="9" cy="5.5" r="5.3" fill="currentColor"/>
-            <rect x="3" y="11" width="12" height="17" rx="2.5" fill="currentColor" opacity="0.90"/>
-            <rect x="3" y="28" width="12" height="3"  rx="1"   fill="currentColor" opacity="0.60"/>
-            <rect x="3"   y="31" width="5.5" height="20" rx="2.5" fill="currentColor" opacity="0.82"/>
-            <rect x="9.5" y="31" width="5.5" height="20" rx="2.5" fill="currentColor" opacity="0.82"/>
-        </svg>`,
-
-        adult: `<svg viewBox="0 0 18 52" width="15" height="44" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="9" cy="5" r="5.3" fill="currentColor"/>
-            <path d="M 4 5 Q 9 0 14 5 L 14 7.5 Q 9 6 4 7.5 Z" fill="currentColor" opacity="0.48"/>
-            <rect x="3.5" y="10" width="11" height="12" rx="2.5" fill="currentColor" opacity="0.90"/>
-            <path d="M 2 22 L 16 22 L 18 44 L 0 44 Z" fill="currentColor" opacity="0.79"/>
-            <rect x="2.5"  y="44" width="5" height="7" rx="2.5" fill="currentColor" opacity="0.77"/>
-            <rect x="10.5" y="44" width="5" height="7" rx="2.5" fill="currentColor" opacity="0.77"/>
-        </svg>`,
-
-        'adult-m': `<svg viewBox="0 0 18 52" width="15" height="44" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="9" cy="5" r="5.3" fill="currentColor"/>
-            <rect x="3"   y="10" width="12" height="18" rx="2.5" fill="currentColor" opacity="0.90"/>
-            <rect x="2.5" y="28" width="13" height="3"  rx="1"   fill="currentColor" opacity="0.60"/>
-            <rect x="2.5" y="31" width="6"  height="20" rx="2.5" fill="currentColor" opacity="0.82"/>
-            <rect x="9.5" y="31" width="6"  height="20" rx="2.5" fill="currentColor" opacity="0.82"/>
-        </svg>`,
-
-        elderly: `<svg viewBox="0 0 26 50" width="18" height="40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="9" cy="5" r="5.3" fill="currentColor"/>
-            <path d="M 4 4.5 Q 9 0 14 4.5" fill="currentColor" opacity="0.28"/>
-            <rect x="3" y="10" width="11" height="14" rx="2.5" fill="currentColor" opacity="0.87" transform="rotate(5 8 17)"/>
-            <rect x="2" y="25" width="5.5" height="18" rx="2.5" fill="currentColor" opacity="0.82"/>
-            <rect x="9" y="25" width="5.5" height="18" rx="2.5" fill="currentColor" opacity="0.82"/>
-            <line x1="19.5" y1="18" x2="24" y2="47" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" opacity="0.62"/>
-            <ellipse cx="19" cy="17" rx="2.5" ry="1.8" fill="currentColor" opacity="0.60"/>
-        </svg>`,
+    const ES_IMGS = {
+        baby:      { srcs: ['./img/bg-neonato-1.png?v2',      './img/bg-neonato-2.png?v2'],                                                                         w: 36, h: 22 },
+        toddler:   { srcs: ['./img/bg-lactante-1.png',     './img/bg-lactante-2.png'],                                                                        w: 24, h: 27 },
+        child:     { srcs: ['./img/bg-nino-1.png',         './img/bg-nino-2.png'],                                                                            w: 17, h: 38 },
+        teen:      { srcs: ['./img/bg-adolescente-1.png',  './img/bg-adolescente-2.png'] },
+        youth:     { srcs: ['./img/bg-joven-1.png',        './img/bg-joven-2.png'] },
+        adult:     { srcs: ['./img/bg-adulto-1.png',       './img/bg-adulto-2.png'] },
+        'adult-m': { srcs: ['./img/bg-adulto-mayor-1.png', './img/bg-adulto-mayor-2.png', './img/bg-adulto-mayor-3.png'] },
+        elderly:   { srcs: ['./img/bg-mayores-1.png',      './img/bg-mayores-2.png',      './img/bg-mayores-3.png', './img/bg-mayores-4.png'] },
     };
 
     const ES_DIM = {
-        baby:     { w: 36, h: 22 },
+        baby:     { w: 36, h: 28 },
         toddler:  { w: 24, h: 27 },
         child:    { w: 17, h: 38 },
         teen:     { w: 15, h: 44 },
@@ -2231,10 +2171,14 @@
     const esStage = document.getElementById('esStage');
 
     esFigures.forEach(fig => {
-        const d = document.createElement('div');
+        const d    = document.createElement('div');
         d.className = 'p-fig';
-        d.style.color = fig.g.color;
-        d.innerHTML = ES_SV[fig.g.type];
+        const cfg  = ES_IMGS[fig.g.type];
+        const dim  = ES_DIM[fig.g.type];
+        const src  = cfg.srcs[fig.fi % cfg.srcs.length];
+        const imgW = cfg.w ?? dim.w;
+        const imgH = cfg.h ?? dim.h;
+        d.innerHTML = `<img src="${src}" width="${imgW}" height="${imgH}" alt="" draggable="false">`;
         esStage.appendChild(d);
         fig.el = d;
     });
@@ -2833,7 +2777,7 @@
     (function () {
         var card     = document.getElementById('mayteCard');
         var closeBtn = document.getElementById('mayteClose');
-        var section  = document.querySelector('.sistema-section');
+        var section  = document.querySelector('.sistema-minsa');
         if (!card || !section) return;
 
         var interacted = false;

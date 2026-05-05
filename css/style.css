@@ -2327,9 +2327,9 @@ span.separador {
     color: #111;
     cursor: pointer;
     flex: 1;
-    font: 1.6rem / 1 'Isidora Bold';
-    max-width: 190px;
-    padding: 10px 10px;
+    font: 1.4rem / 1 'Isidora Bold';
+    max-width: 152px;
+    padding: 9px 10px;
     transition: background 0.2s, color 0.2s;
     -webkit-tap-highlight-color: transparent;
 }
@@ -2772,6 +2772,8 @@ span.separador {
     #brecha-section .box-fuente{
         padding: 20px 0 0;
     }
+
+    
 
 }
 
