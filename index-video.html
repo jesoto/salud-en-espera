@@ -30,9 +30,9 @@
         <div class="loading-bg" id="loadingBgA"></div>
         <div class="loading-bg" id="loadingBgB"></div>
         <div class="loading-content">
-            <div class="loading-stat" id="loadingStat">
-                <strong>Primer nivel debilitado</strong>
-                Más del 95% de los establecimientos de salud del primer nivel operan con capacidad instalada inadecuada
+            <div class="loading-stat loading-fijo" id="loadingStat">
+                <!--<strong>Primer nivel debilitado</strong>-->
+                ¿Cómo debería ser nuestro sistema de salud?
             </div>
             <div class="loading-details" id="loadingDetails">Descargando video…</div>
             <div class="loading-bar">
@@ -71,235 +71,9 @@
                 <i></i>
             </h2>
             <p>
-                <span class="sub">el sistema que no cura</span>
-                Tener un sistema de salud digno es posible. Pero en el Perú de hoy, enfermarse en el sistema público significa esperar: semanas para una cita, meses para un examen, años para una infraestructura que nunca llega. La OMS recomienda que los países destinen al menos el 6% de su PBI a salud; América Latina apenas llega al 3.8% y el Perú está por debajo de eso. Se puede. Pero hace falta entender por qué, después de 30 años, seguimos sin lograrlo a escala.
+                <span class="sub">La salud que merecemos es posible</span>
+                Pero en el Perú, enfermarse es un riesgo que se paga con tiempo y vidas. Mientras la OMS recomienda invertir el 6% del PBI en salud, nuestro país ni siquiera alcanza el promedio regional del 3.8%. El resultado es una espera eterna: semanas para una cita, meses para un examen y décadas para una infraestructura que no llega.
             </p>
-        </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
-         TÍTULO SECCIÓN 
-    ══════════════════════════════════════════════════════ -->
-    <section class="section-title">
-        <div class="box-title">
-            <div class="ctn-box-title">
-                <h3>Historias</h3>
-            </div>            
-        </div>
-        <div class="box-title cian">
-            <div class="ctn-box-title">
-                <h3>humanas</h3>
-                <h4>cuando la espera <span>cuesta vidas</span><img src="./img/marca-seccion-1.png" alt="" width="100%" class="marca-seccion-1"></h4>
-            </div>            
-        </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
-         CASOS · HISTORIAS HUMANAS
-    ══════════════════════════════════════════════════════ -->
-    <section class="casos-section" id="casosSection">
-        <div class="casos-track" id="casosTrack">
-
-            <!-- Caso 1 -->
-            <article class="caso-card">
-                <div class="caso-top">
-                    <div class="caso-icon">
-                        <img src="./img/icon-caso-1.png" alt="" width="100%">
-                    </div>
-                    <span class="caso-num">Caso #1</span>
-                </div>
-                <div class="caso-meta">
-                    <h2 class="caso-name">María López</h2>
-                    <p class="caso-city">Lima, Perú</p>
-                    <div class="caso-fields">
-                        <div class="caso-field">
-                            <span class="caso-field-label">Situación en el sistema:</span>
-                            <span class="caso-field-value">Retrasos en el tratamiento oncológico</span>
-                        </div>
-                        <div class="caso-field">
-                            <span class="caso-field-label">Enfermedad:</span>
-                            <span class="caso-field-value">Cáncer de mama</span>
-                        </div>
-                    </div>
-                </div>
-                <hr class="caso-divider">
-                <div class="caso-body">
-                    <p class="caso-text"><strong>María López,</strong> profesora de Lima, esperó dos meses para hacerse  una mamografía porque el equipo del hospital no funcionaba. Cuando por fin llegó el diagnóstico —cáncer de mama— la quimioterapia tampoco estaba disponible.</p>
-                </div>
-                <div class="caso-footer">
-                    <button class="caso-btn js-audio-toggle">Escuchar más</button>
-                    <div class="caso-audio-wrap" hidden>
-                        <audio class="caso-audio-el" preload="none" src="./audio/audio-maria-lopez.mp3"></audio>
-                        <div class="ap-row">
-                            <button class="ap-play-btn js-ap-play" aria-label="Reproducir">
-                                <svg class="icon-play" viewBox="0 0 20 20" width="13" height="13"><polygon points="4,2 18,10 4,18" fill="currentColor"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 20 20" width="13" height="13" hidden><rect x="3" y="2" width="5" height="16" fill="currentColor"/><rect x="12" y="2" width="5" height="16" fill="currentColor"/></svg>
-                            </button>
-                            <div class="ap-progress-wrap">
-                                <input type="range" class="ap-range js-ap-range" min="0" max="100" value="0" step="0.1">
-                                <div class="ap-times">
-                                    <span class="js-ap-current">0:00</span>
-                                    <span class="js-ap-duration">–:––</span>
-                                </div>
-                            </div>
-                            <button class="ap-close-btn js-ap-close" aria-label="Cerrar">
-                                <svg viewBox="0 0 20 20" width="12" height="12"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Caso 2 -->
-            <article class="caso-card">
-                <div class="caso-top">
-                    <div class="caso-icon">
-                        <img src="./img/icon-caso-2.png" alt="" width="100%">
-                    </div>
-                    <span class="caso-num">Caso #2</span>
-                </div>
-                <div class="caso-meta">
-                    <h2 class="caso-name">Juan Pérez</h2>
-                    <p class="caso-city">Lima provincias, Perú</p>
-                    <div class="caso-fields">
-                        <div class="caso-field">
-                            <span class="caso-field-label">Situación en el sistema:</span>
-                            <span class="caso-field-value">Demoras en la atención primaria</span>
-                        </div>
-                        <div class="caso-field">
-                            <span class="caso-field-label">Enfermedad:</span>
-                            <span class="caso-field-value">Úlcera perforada</span>
-                        </div>
-                    </div>
-                </div>
-                <hr class="caso-divider">
-                <div class="caso-body">
-                    <p class="caso-text"><strong>Juan Pérez</strong> madrugaba desde las 5:00 a.m. para conseguir una cita en su centro de salud. Después de dos semanas, llegó al quirófano con una úlcera perforada. El médico le dijo que otro día más y no lo habría contado.</p>
-                </div>
-                <div class="caso-footer">
-                    <button class="caso-btn js-audio-toggle">Escuchar más</button>
-                    <div class="caso-audio-wrap" hidden>
-                        <audio class="caso-audio-el" preload="none" src="./audio/audio-juan-perez.mp3"></audio>
-                        <div class="ap-row">
-                            <button class="ap-play-btn js-ap-play" aria-label="Reproducir">
-                                <svg class="icon-play" viewBox="0 0 20 20" width="13" height="13"><polygon points="4,2 18,10 4,18" fill="currentColor"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 20 20" width="13" height="13" hidden><rect x="3" y="2" width="5" height="16" fill="currentColor"/><rect x="12" y="2" width="5" height="16" fill="currentColor"/></svg>
-                            </button>
-                            <div class="ap-progress-wrap">
-                                <input type="range" class="ap-range js-ap-range" min="0" max="100" value="0" step="0.1">
-                                <div class="ap-times">
-                                    <span class="js-ap-current">0:00</span>
-                                    <span class="js-ap-duration">–:––</span>
-                                </div>
-                            </div>
-                            <button class="ap-close-btn js-ap-close" aria-label="Cerrar">
-                                <svg viewBox="0 0 20 20" width="12" height="12"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Caso 3 -->
-            <article class="caso-card">
-                <div class="caso-top">
-                    <div class="caso-icon">
-                        <img src="./img/icon-caso-3.png" alt="" width="100%">
-                    </div>
-                    <span class="caso-num">Caso #3</span>
-                </div>
-                <div class="caso-meta">
-                    <h2 class="caso-name">Yaiselis Rondón</h2>
-                    <p class="caso-city">Lima, Perú</p>
-                    <div class="caso-fields">
-                        <div class="caso-field">
-                            <span class="caso-field-label">Situación en el sistema:</span>
-                            <span class="caso-field-value">Desabastecimiento de medicamentos</span>
-                        </div>
-                        <div class="caso-field">
-                            <span class="caso-field-label">Enfermedad:</span>
-                            <span class="caso-field-value">Hipertensión</span>
-                        </div>
-                    </div>
-                </div>
-                <hr class="caso-divider">
-                <div class="caso-body">
-                    <p class="caso-text"><strong>Yaiselis Rondón</strong> tiene 38 años e hipertensión. Durante meses, EsSalud no tuvo Losartán, el  medicamento que necesita para vivir y que en la farmacia privada puede llegar a costar más de 100 soles. La Defensoría del Pueblo registró la escasez, sin obtener una respuesta.</p>
-                </div>
-                <div class="caso-footer">
-                    <button class="caso-btn js-audio-toggle">Escuchar más</button>
-                    <div class="caso-audio-wrap" hidden>
-                        <audio class="caso-audio-el" preload="none" src="./audio/audio-yaiselis-rondon.mp3"></audio>
-                        <div class="ap-row">
-                            <button class="ap-play-btn js-ap-play" aria-label="Reproducir">
-                                <svg class="icon-play" viewBox="0 0 20 20" width="13" height="13"><polygon points="4,2 18,10 4,18" fill="currentColor"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 20 20" width="13" height="13" hidden><rect x="3" y="2" width="5" height="16" fill="currentColor"/><rect x="12" y="2" width="5" height="16" fill="currentColor"/></svg>
-                            </button>
-                            <div class="ap-progress-wrap">
-                                <input type="range" class="ap-range js-ap-range" min="0" max="100" value="0" step="0.1">
-                                <div class="ap-times">
-                                    <span class="js-ap-current">0:00</span>
-                                    <span class="js-ap-duration">–:––</span>
-                                </div>
-                            </div>
-                            <button class="ap-close-btn js-ap-close" aria-label="Cerrar">
-                                <svg viewBox="0 0 20 20" width="12" height="12"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Caso 4 -->
-            <article class="caso-card">
-                <div class="caso-top">
-                    <div class="caso-icon">
-                        <img src="./img/icon-caso-4.png" alt="" width="100%">
-                    </div>
-                    <span class="caso-num">Caso #4</span>
-                </div>
-                <div class="caso-meta">
-                    <h2 class="caso-name">Eduardo Ramírez</h2>
-                    <p class="caso-city">Lima, Perú</p>
-                    <div class="caso-fields">
-                        <div class="caso-field">
-                            <span class="caso-field-label">Situación en el sistema:</span>
-                            <span class="caso-field-value">Emergencia sin quirófano disponible</span>
-                        </div>
-                        <div class="caso-field">
-                            <span class="caso-field-label">Enfermedad:</span>
-                            <span class="caso-field-value">Apendicitis aguda</span>
-                        </div>
-                    </div>
-                </div>
-                <hr class="caso-divider">
-                <div class="caso-body">
-                    <p class="caso-text"><strong>Eduardo Ramírez,</strong> llegó a emergencias con apendicitis aguda. Le dijeron que necesitaba operarse de inmediato, pero demoraron en atenderlo y su apéndice reventó. Pasó tres días en UCI y perdió su trabajo durante la recuperación.</p>
-                </div>
-                <div class="caso-footer">
-                    <button class="caso-btn js-audio-toggle">Escuchar más</button>
-                    <div class="caso-audio-wrap" hidden>
-                        <audio class="caso-audio-el" preload="none" src="./audio/audio-eduardo-ramirez.mp3"></audio>
-                        <div class="ap-row">
-                            <button class="ap-play-btn js-ap-play" aria-label="Reproducir">
-                                <svg class="icon-play" viewBox="0 0 20 20" width="13" height="13"><polygon points="4,2 18,10 4,18" fill="currentColor"/></svg>
-                                <svg class="icon-pause" viewBox="0 0 20 20" width="13" height="13" hidden><rect x="3" y="2" width="5" height="16" fill="currentColor"/><rect x="12" y="2" width="5" height="16" fill="currentColor"/></svg>
-                            </button>
-                            <div class="ap-progress-wrap">
-                                <input type="range" class="ap-range js-ap-range" min="0" max="100" value="0" step="0.1">
-                                <div class="ap-times">
-                                    <span class="js-ap-current">0:00</span>
-                                    <span class="js-ap-duration">–:––</span>
-                                </div>
-                            </div>
-                            <button class="ap-close-btn js-ap-close" aria-label="Cerrar">
-                                <svg viewBox="0 0 20 20" width="12" height="12"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
         </div>
     </section>
 
@@ -317,146 +91,17 @@
                 <h3>la salud pública <img src="./img/marca-seccion-2.png" alt="" width="100%"></h3>
             </div>
         </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
-         DATOS · SLIDER
-    ══════════════════════════════════════════════════════ -->
-    <section class="datos-slider">
-        <div class="ds-inner">
-            <button class="ds-arrow ds-prev" aria-label="Anterior">
-                <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <div class="ds-viewport">
-
-                <!-- Slide 1 -->
-                <div class="ds-slide is-active">
-                    <div class="ds-text">
-                        <h3>Personal</h3>
-                        <p><strong>4 de cada 100</strong> oncólogos del MINSA trabajan en establecimientos de primer nivel. El 77% está concentrado en institutos especializados de tercer nivel — lejos de donde vive la mayoría de pacientes con cáncer.</p>
-                    </div>
-                    <div class="ds-img">
-                        <img src="./img/bg-slide-1.jpg" alt="Ilustración de lazo de cáncer" width="100%">
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="ds-slide">
-                    <div class="ds-text">
-                        <h3>Espera</h3>
-                        <p><strong>57 días</strong> es el tiempo máximo registrado para conseguir una cita con especialista en el Hospital San Juan de Lurigancho. El promedio nacional de diferimiento en EsSalud es de 16 días — pero en algunas redes regionales supera el mes.</p>
-                    </div>
-                    <div class="ds-img">
-                        <img src="./img/bg-slide-2.jpg" alt="Ilustración de calendario" width="100%">
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="ds-slide">
-                    <div class="ds-text">
-                        <h3>Mortalidad materna</h3>
-                        <p><strong>194 muertes</strong> por cada 100,000 nacidos vivos ocurren en Loreto — casi 7 veces más que en Lima (28) y casi 3 veces la meta que el Perú se comprometió a alcanzar en 2030 con los ODS.</p>
-                    </div>
-                    <div class="ds-img">
-                        <img src="./img/bg-slide-3.jpg" alt="Ilustración de corazón con bebé" width="100%">
-                    </div>
-                </div>
-
-                <!-- Slide 4 -->
-                <div class="ds-slide">
-                    <div class="ds-text">
-                        <h3>Salud mental</h3>
-                        <p><strong>1 psiquiatra</strong> por cada 100,000 habitantes hay en promedio fuera de Lima. En Puno, la región con más intentos de suicidio registrados per cápita, hay 0.36 psiquiatras por cada 100,000 habitantes.</p>
-                    </div>
-                    <div class="ds-img">
-                        <img src="./img/bg-slide-4.jpg" alt="Ilustración de mente" width="100%">
-                    </div>
-                </div>
-
-            </div>
-            <button class="ds-arrow ds-next" aria-label="Siguiente">
-                <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-        </div>
-    </section>
+    </section>   
 
     <div class="box-texto">
         <h5 class="gigantes">Los cinco gigantes de la salud</h5>
         <p>
-            <span>El sistema de salud peruano tiene cinco grandes actores: el MINSA —que norma y regula—, EsSalud —que atiende a los trabajadores formales—, las sanidades de las Fuerzas Armadas y la PNP, y los privados.</span> En teoría, cada uno cubre a su población. En la práctica, millones caen en los vacíos entre uno y otro.
+            <span>El sistema se divide en cinco actores que operan de forma aislada. El MINSA (rector), EsSalud (seguridad social), las sanidades de las FF.AA. y la PNP, y el sector Privado. </span> Aunque cada uno tiene su población asignada, en la práctica millones de peruanos caen en los vacíos que hay entre ellos.
         </p>
         <p>
-            <span>El primer nivel —postas y centros de salud— debería resolver el 80% de los problemas de salud antes de que lleguen a un hospital.</span> Pero más del 95% de esos establecimientos opera con infraestructura inadecuada. El resultado: los hospitales colapsan atendiendo lo que debió resolverse mucho antes y mucho más cerca de casa.
+            <span>El primer nivel debería resolver el 80% de las necesidades médicas, pero con un 95% de locales en condiciones precarias, el sistema colapsa. </span> Terminamos en hospitales saturados por problemas que debieron resolverse cerca de casa
         </p>
-    </div>
-
-    <!-- ══════════════════════════════════════════════════════
-         NIVELES · ATENCIÓN MINSA
-    ══════════════════════════════════════════════════════ -->
-    <section class="niveles-section" id="nivelesSection">
-        <div class="niveles-inner">
-
-            <div class="niveles-header">
-                <h2>Niveles de atención del MINSA</h2>
-                <p class="niveles-hint">Selecciona <img src="./img/icon-click.png" alt="" width="15" aria-hidden="true"></p>
-            </div>
-
-            <div class="niveles-btns">
-                <button class="nivel-btn js-nivel-btn" data-nivel="0">Nivel 1</button>
-                <button class="nivel-btn js-nivel-btn" data-nivel="1">Nivel 2</button>
-                <button class="nivel-btn js-nivel-btn" data-nivel="2">Nivel 3</button>
-            </div>
-
-            <!-- Estado inicial: Doctor -->
-            <div class="niveles-dr" id="nivelesDr">
-                <img src="./img/doctor.png" alt="" width="100%">
-            </div>
-
-            <!-- Panel Nivel 1 -->
-            <div class="nivel-panel" id="nivelPanel0" hidden>
-                <h3 class="np-title">Primer Nivel <em>(I-1 a I-4)</em></h3>
-                <p class="np-subtitle">Postas, centros de salud y policlínicos</p>
-                <p class="np-body">Es la puerta de entrada al sistema. Aquí se atienden consultas de medicina general, controles de embarazo, vacunación, salud mental comunitaria y enfermedades crónicas como diabetes e hipertensión. Los establecimientos I-1 e I-2 son puestos y postas, con o sin médico permanente. Los I-3 son centros de salud con mayor capacidad, y los I-4 tienen camas de internamiento para casos que no requieren hospital.</p>
-                <p class="np-body np-highlight"><strong>Es el nivel más extendido del país — el MINSA tiene más de 7,900 establecimientos de primer nivel — pero también el más debilitado:</strong> más del 95% opera con capacidad instalada inadecuada. Aquí trabaja el 84% de los médicos generales y el 91% de los psicólogos, pero apenas el 4% de los oncólogos y el 46% de los ginecólogos.</p>
-                <p class="np-org-title">¿Cómo se organiza?</p>
-                <dl class="np-dl">
-                    <div class="np-dl-row"><dt>I-1 / I-2:</dt><dd>Puesto o posta de salud, con o sin médico permanente.</dd></div>
-                    <div class="np-dl-row"><dt>I-3:</dt><dd>Centro de salud, centro médico o policlínico, sin camas de internamiento.</dd></div>
-                    <div class="np-dl-row"><dt>I-4:</dt><dd>Centro de salud o centro médico con camas de internamiento.</dd></div>
-                </dl>
-            </div>
-
-            <!-- Panel Nivel 2 -->
-            <div class="nivel-panel" id="nivelPanel1" hidden>
-                <h3 class="np-title">Segundo Nivel <em>(II-1, II-2, II-E)</em></h3>
-                <p class="np-subtitle">Hospitales generales y especializados</p>
-                <p class="np-body np-highlight"><strong>Para qué sirve</strong></p>
-                <p class="np-body">Recibe los casos que el primer nivel no puede resolver. Los hospitales II-1 y II-2 son hospitales generales - con mayor complejidad en los II-2 - y los II-E son establecimientos de atención especializada. Tienen servicios de cirugía, emergencias, hospitalización y especialidades como ginecología, pediatría y traumotología.</p>
-                <p class="np-body np-highlight"><strong>El MINSA tiene 226 establecimientos de segundo nivel.</strong> Es el nivel donde se concentra buena parte de los ginecólogos (33%) y donde deberían atenderse las complicaciones obstétricas, pero en regiones como Loreto, con 34 muertes maternas en 2025, la cobertura de especialistas en este nivel es insuficiente.</p>
-                <p class="np-org-title">¿Cómo se organiza?</p>
-                <dl class="np-dl">
-                    <div class="np-dl-row"><dt>II-1 / II-2:</dt><dd>Hospital General; II-2 tiene mayor capacidad resolutiva y más especialidades que II-1.</dd></div>
-                    <div class="np-dl-row"><dt>II-E:</dt><dd>Hospital o clínica de atención especializada (segundo nivel).</dd></div>
-                </dl>
-            </div>
-
-            <!-- Panel Nivel 3 -->
-            <div class="nivel-panel" id="nivelPanel2" hidden>
-                <h3 class="np-title">Tercer Nivel <em>(III-1, III-2, III-E)</em></h3>
-                <p class="np-subtitle">Institutos y hospitales de alta complejidad</p>
-                <p class="np-body np-highlight"><strong>Para qué sirve</strong></p>
-                <p class="np-body">El nivel de mayor especialización. Aquí se atienden enfermedades complejas, se realizan transplantes, cirugías de alta complejidad y se concentran los especialistas más escasos. Los III-1 y III-2 son hospitales de referencia nacional  o regional, y los III-E son institutos especializados como el INEN para cáncer o el INSM para salud mental.</p>
-                <p class="np-body np-highlight"><strong>El MINSA tiene apenas 49 establecimientos de tercer nivel en todo el país.</strong> Aquí está concentrado el 77% de los oncólogos. Para un paciente con cáncer en Pasco o Madre de Dios, el especialista más cercano puede estar a cientos de kilómetros.</p>
-                <p class="np-org-title">¿Cómo se organiza?</p>
-                <dl class="np-dl">
-                    <div class="np-dl-row"><dt>III-1:</dt><dd>Hospital de alta complejidad y referencia regional o nacional.</dd></div>
-                    <div class="np-dl-row"><dt>III-2:</dt><dd>Instituto especializado (ej. INEN para cáncer, INSM para salud mental).</dd></div>
-                    <div class="np-dl-row"><dt>III-E:</dt><dd>Hospital o instituto de atención especializada de alta complejidad.</dd></div>
-                </dl>
-            </div>
-
-        </div>
-    </section>
+    </div>    
 
     <!-- ══════════════════════════════════════════════════════
          SISTEMA DE SALUD · ORGANIZACIÓN
@@ -478,13 +123,13 @@
             <div class="sistema-connector-h"></div>
 
             <!-- SUSALUD -->
-            <div class="sistema-susalud">
+            <!--<div class="sistema-susalud">
                 <img src="./img/logo-susalud.jpg" alt="SUSALUD" class="susalud-logo">
                 <div>
                     <strong class="susalud-name">SUSALUD</strong>
                     <p class="susalud-desc">Vigila que todos los prestadores —públicos y privados— respeten los derechos de los pacientes.</p>
                 </div>
-            </div>
+            </div>-->
 
             <!--<div class="sistema-connector-h"></div>-->
 
@@ -497,7 +142,7 @@
         <button class="mayte-close" id="mayteClose2" aria-label="Cerrar">✕</button>
         <div class="mayte-card">
             <div class="mayte-card-body">
-                <h4 class="mayte-titulo">Mayté explica</h4>
+                <h4 class="mayte-titulo">Ana explica</h4>
                 <img src="./img/mayte.png" alt="Mayté">
                 <hr class="mayte-hr">
                 <p class="mayte-texto">El patrón es el mismo de siempre: el sistema que tiene menos recursos atiende a más gente, con enfermedades que deberían resolverse antes de llegar a una consulta. No es mala suerte. Es lo que pasa cuando la prevención no existe.</p>
@@ -510,10 +155,10 @@
         <button class="mayte-close" id="mayteClose" aria-label="Cerrar">✕</button>
         <div class="mayte-card">
             <div class="mayte-card-body">
-                <h4 class="mayte-titulo">Mayté explica</h4>
+                <h4 class="mayte-titulo">Ana explica</h4>
                 <img src="./img/mayte.png" alt="Mayté">
                 <hr class="mayte-hr">
-                <p class="mayte-texto">A qué sistema perteneces no lo eliges tú – lo decide tu situación laboral. Y eso importa porque cada sistema tiene sus propios tiempos de espera, sus propios médicos y sus propios límites. Selecciona un prestador para ver cómo funciona cada uno.</p>
+                <p class="mayte-texto"><strong>¿Sabías que Susalud protege tus derechos?</strong> Sin importar si te atiendes en un centro público o privado, ellos aseguran que recibas el trato que mereces. Si tienes problemas con tu atención, pide ayuda aquí: Línea gratuita: 113 (opción 7) o a través de la web: <a href="www.gob.pe/susalud" target="_blank" rel="noopener noreferrer">www.susalud.gob.pe</a></p>
             </div>
         </div>
     </div>
@@ -523,7 +168,7 @@
         <button class="mayte-close" id="mayteClose4" aria-label="Cerrar">✕</button>
         <div class="mayte-card">
             <div class="mayte-card-body">
-                <h4 class="mayte-titulo">Mayté explica</h4>
+                <h4 class="mayte-titulo">Ana explica</h4>
                 <img src="./img/mayte.png" alt="Mayté">
                 <hr class="mayte-hr">
                 <p class="mayte-texto">Un médico SERUM es un recién egresado que hace su año rural obligatorio antes de poder ejercer. En muchas regiones, es el único médico disponible. Cuando termina su año, se va — y la posta vuelve a quedar vacía.</p>
@@ -536,7 +181,7 @@
         <button class="mayte-close" id="mayteClose3" aria-label="Cerrar">✕</button>
         <div class="mayte-card">
             <div class="mayte-card-body">
-                <h4 class="mayte-titulo">Mayté explica</h4>
+                <h4 class="mayte-titulo">Ana explica</h4>
                 <img src="./img/mayte.png" alt="Mayté">
                 <hr class="mayte-hr">
                 <p class="mayte-texto">Un edificio viejo no es solo un problema estético. Es una sala de espera sin ventilación, un quirófano sin luz de respaldo, una posta que se inunda cuando llueve. Si el establecimiento falla, el primero en pagarlo es el paciente que no tiene otra opción.</p>
@@ -751,24 +396,359 @@
                     </div>
                 </div>
 
-
-
-
             </div><!-- /sistema-subsectores -->
+
+            <div class="box-fuente" style="margin-top: 20px;">
+                <p>
+                    <span>Fuente: </span> Repositorio Único Nacional de Información de Salud (Reunis)
+                </p>
+            </div>
 
             <!-- Nota sobre aseguramiento -->
             <div class="sistema-nota">
                 <div class="nota-badge">Nota sobre aseguramiento</div>
-                <p><strong>Dependiendo de en qué trabajas o cuánto ganas, te atiende un sistema diferente.</strong> El SIS cubre a quienes no tienen seguro; EsSalud, a los trabajadores formales; las FF.AA. y la PNP tienen régimen propio; y los seguros privados y EPS cubren a quienes pueden pagarlos. Todos operan bajo el marco del Aseguramiento Universal en Salud (AUS), aunque en la práctica la cobertura es muy desigual.</p>
+                <p><strong>¿Quién te atiende?.</strong> Aunque el Perú cuenta con Aseguramiento Universal (AUS), el lugar donde te atiendes lo decide tu empleo o tus ingresos. Esta fragmentación del sistema genera brechas profundas en la calidad de la atención.</p>
             </div>
 
-            <div class="box-fuente">
-                <p>
-                    <span>Fuente: </span> Reunis
+            
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         NIVELES · ATENCIÓN MINSA
+    ══════════════════════════════════════════════════════ -->
+    <section class="niveles-section" id="nivelesSection">
+        <div class="niveles-inner">
+
+            <div class="niveles-header">
+                <h2>Niveles de atención del MINSA</h2>
+                <p class="niveles-hint">Selecciona <img src="./img/icon-click.png" alt="" width="15" aria-hidden="true"></p>
+            </div>
+
+            <div class="niveles-btns">
+                <button class="nivel-btn js-nivel-btn" data-nivel="0">Nivel 1</button>
+                <button class="nivel-btn js-nivel-btn" data-nivel="1">Nivel 2</button>
+                <button class="nivel-btn js-nivel-btn" data-nivel="2">Nivel 3</button>
+            </div>
+
+            <!-- Estado inicial: Doctor -->
+            <div class="niveles-dr" id="nivelesDr">
+                <img src="./img/doctor.png" alt="" width="100%">
+            </div>
+
+            <!-- Panel Nivel 1 -->
+            <div class="nivel-panel" id="nivelPanel0" hidden>
+                <h3 class="np-title">Primer Nivel <em>(I-1 a I-4)</em></h3>
+                <p class="np-subtitle">El muro debilitado: Postas, centros de salud y policlínicos</p>
+                <p class="np-body"><strong>Para qué sirve:</strong> Es la puerta de entrada. Atiende medicina general, vacunas, controles de embarazo y enfermedades crónicas como diabetes e hipertensión.</p>
+                <p class="np-body">
+                    <ul>
+                        <li>
+                            <p class="np-body" style="margin-bottom: 5px;">
+                                <strong>El diagnóstico: </strong>De los <strong>7,900</strong> locales del MINSA, el 95% opera en condiciones precarias.
+                            </p>                            
+                        </li>
+                        <li>
+                            <p class="np-body">
+                                <strong>La brecha: </strong>Aquí trabaja la mayoría de médicos generales (84%), pero casi no hay especialistas: solo el <strong>4% de los oncólogos</strong> del país está en este nivel.
+                            </p>
+                        </li>
+                    </ul>
                 </p>
+                <p class="np-org-title">¿Cómo se organiza?</p>
+                <dl class="np-dl">
+                    <div class="np-dl-row"><dt>I-1 / I-2:</dt><dd> Puesto o postas (con o sin médico permanente).</dd></div>
+                    <div class="np-dl-row"><dt>I-3 / I-4:</dt><dd>Centros de salud y policlínicos (algunos con camas de internamiento).</dd></div>
+                </dl>
+            </div>
+
+            <!-- Panel Nivel 2 -->
+            <div class="nivel-panel" id="nivelPanel1" hidden>
+                <h3 class="np-title">Segundo Nivel <em>(II-1, II-2, II-E)</em></h3>
+                <p class="np-subtitle">En deuda: Hospitales generales y especializados</p>
+                <p class="np-body np-highlight"><strong>Para qué sirve</strong> Recibe los casos que el primer nivel no puede resolver. Incluye cirugías, emergencias y especialidades como pediatría y traumatología.</p>
+                <p class="np-body">
+                    <ul>
+                        <li>
+                            <p class="np-body" style="margin-bottom: 5px;">
+                                <strong>El dato: </strong>Solo hay <strong>226</strong> establecimientos en todo el país.
+                            </p>                            
+                        </li>
+                        <li>
+                            <p class="np-body">
+                                <strong>La crisis: </strong>Aunque concentra al 33% de ginecólogos, la cobertura es desigual. En Loreto, esto se traduce en tragedias: <strong>34 muertes maternas en solo un año.</strong>
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+                <p class="np-org-title">¿Cómo se organiza?</p>
+                <dl class="np-dl">
+                    <div class="np-dl-row"><dt>II-1 / II-2:</dt><dd>Hospitales generales.</dd></div>
+                    <div class="np-dl-row"><dt>II-E:</dt><dd>Establecimientos de atención especializada.</dd></div>
+                </dl>
+            </div>
+
+            <!-- Panel Nivel 3 -->
+            <div class="nivel-panel" id="nivelPanel2" hidden>
+                <h3 class="np-title">Tercer Nivel <em>(III-1, III-2, III-E)</em></h3>
+                <p class="np-subtitle">Alta complejidad: Institutos y hospitales de alta complejidad</p>
+                <p class="np-body np-highlight"><strong>Para qué sirve</strong> Aquí se realizan trasplantes, cirugías complejas y se tratan enfermedades raras o avanzadas.</p>
+                <p class="np-body">
+                    <ul>
+                        <li>
+                            <p class="np-body" style="margin-bottom: 5px;">
+                                <strong>La escasez: </strong>Solo existen <strong>49</strong> institutos y hospitales de este nivel en todo el Perú.
+                            </p>                            
+                        </li>
+                        <li>
+                            <p class="np-body">
+                                <strong>El cuello de botella: </strong>Aquí se concentra el <strong>77% de los oncólogos.</strong> Para un paciente en Pasco o Madre de Dios, el especialista más cercano está a <strong>cientos de kilómetros.</strong> 
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+                <p class="np-org-title">¿Cómo se organiza?</p>
+                <dl class="np-dl">
+                    <div class="np-dl-row"><dt>III-1 / III-2:</dt><dd>Hospitales de referencia nacional e institutos (Ej. INEN o INSM).</dd></div>
+                </dl>
             </div>
 
         </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         TÍTULO SECCIÓN 
+    ══════════════════════════════════════════════════════ -->
+    <section class="section-title">
+        <div class="box-title">
+            <div class="ctn-box-title">
+                <h3>Historias</h3>
+            </div>            
+        </div>
+        <div class="box-title cian">
+            <div class="ctn-box-title">
+                <h3>humanas</h3>
+                <h4>cuando la espera <span>cuesta vidas</span><img src="./img/marca-seccion-1.png" alt="" width="100%" class="marca-seccion-1"></h4>
+            </div>            
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CASOS · HISTORIAS HUMANAS
+    ══════════════════════════════════════════════════════ -->
+    <section class="casos-section" id="casosSection">
+        <div class="casos-inner">
+            <button class="casos-arrow casos-prev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="casos-viewport" id="casosTrack">
+
+            <!-- Caso 1 -->
+            <article class="caso-card is-active">
+                <div class="caso-top">
+                    <div class="caso-icon">
+                        <img src="./img/icon-caso-1.png" alt="" width="100%">
+                    </div>
+                    <span class="caso-num">Caso #1</span>
+                </div>
+                <div class="caso-meta">
+                    <h2 class="caso-name">María López</h2>
+                    <p class="caso-city">Lima, Perú</p>
+                    <div class="caso-fields">
+                        <div class="caso-field">
+                            <span class="caso-field-label">Situación en el sistema:</span>
+                            <span class="caso-field-value">Retrasos en el tratamiento oncológico</span>
+                        </div>
+                        <div class="caso-field">
+                            <span class="caso-field-label">Enfermedad:</span>
+                            <span class="caso-field-value">Cáncer de mama</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="caso-divider">
+                <div class="caso-body">
+                    <p class="caso-text"><strong>María López,</strong> profesora de Lima, esperó dos meses para hacerse  una mamografía porque el equipo del hospital no funcionaba. Cuando por fin llegó el diagnóstico —cáncer de mama— la quimioterapia tampoco estaba disponible.</p>
+                </div>
+                <div class="caso-footer">
+                    <button class="caso-btn js-audio-toggle">Escuchar más</button>
+                    <div class="caso-audio-wrap" hidden>
+                        <audio class="caso-audio-el" preload="none" src="./audio/audio-maria-lopez.mp3"></audio>
+                        <div class="ap-row">
+                            <button class="ap-play-btn js-ap-play" aria-label="Reproducir">
+                                <svg class="icon-play" viewBox="0 0 20 20" width="13" height="13"><polygon points="4,2 18,10 4,18" fill="currentColor"/></svg>
+                                <svg class="icon-pause" viewBox="0 0 20 20" width="13" height="13" hidden><rect x="3" y="2" width="5" height="16" fill="currentColor"/><rect x="12" y="2" width="5" height="16" fill="currentColor"/></svg>
+                            </button>
+                            <div class="ap-progress-wrap">
+                                <input type="range" class="ap-range js-ap-range" min="0" max="100" value="0" step="0.1">
+                                <div class="ap-times">
+                                    <span class="js-ap-current">0:00</span>
+                                    <span class="js-ap-duration">–:––</span>
+                                </div>
+                            </div>
+                            <button class="ap-close-btn js-ap-close" aria-label="Cerrar">
+                                <svg viewBox="0 0 20 20" width="12" height="12"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Caso 2 -->
+            <article class="caso-card">
+                <div class="caso-top">
+                    <div class="caso-icon">
+                        <img src="./img/icon-caso-2.png" alt="" width="100%">
+                    </div>
+                    <span class="caso-num">Caso #2</span>
+                </div>
+                <div class="caso-meta">
+                    <h2 class="caso-name">Juan Pérez</h2>
+                    <p class="caso-city">Lima provincias, Perú</p>
+                    <div class="caso-fields">
+                        <div class="caso-field">
+                            <span class="caso-field-label">Situación en el sistema:</span>
+                            <span class="caso-field-value">Demoras en la atención primaria</span>
+                        </div>
+                        <div class="caso-field">
+                            <span class="caso-field-label">Enfermedad:</span>
+                            <span class="caso-field-value">Úlcera perforada</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="caso-divider">
+                <div class="caso-body">
+                    <p class="caso-text"><strong>Juan Pérez</strong> madrugaba desde las 5:00 a.m. para conseguir una cita en su centro de salud. Después de dos semanas, llegó al quirófano con una úlcera perforada. El médico le dijo que otro día más y no lo habría contado.</p>
+                </div>
+                <div class="caso-footer">
+                    <button class="caso-btn js-audio-toggle">Escuchar más</button>
+                    <div class="caso-audio-wrap" hidden>
+                        <audio class="caso-audio-el" preload="none" src="./audio/audio-juan-perez.mp3"></audio>
+                        <div class="ap-row">
+                            <button class="ap-play-btn js-ap-play" aria-label="Reproducir">
+                                <svg class="icon-play" viewBox="0 0 20 20" width="13" height="13"><polygon points="4,2 18,10 4,18" fill="currentColor"/></svg>
+                                <svg class="icon-pause" viewBox="0 0 20 20" width="13" height="13" hidden><rect x="3" y="2" width="5" height="16" fill="currentColor"/><rect x="12" y="2" width="5" height="16" fill="currentColor"/></svg>
+                            </button>
+                            <div class="ap-progress-wrap">
+                                <input type="range" class="ap-range js-ap-range" min="0" max="100" value="0" step="0.1">
+                                <div class="ap-times">
+                                    <span class="js-ap-current">0:00</span>
+                                    <span class="js-ap-duration">–:––</span>
+                                </div>
+                            </div>
+                            <button class="ap-close-btn js-ap-close" aria-label="Cerrar">
+                                <svg viewBox="0 0 20 20" width="12" height="12"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Caso 3 -->
+            <article class="caso-card">
+                <div class="caso-top">
+                    <div class="caso-icon">
+                        <img src="./img/icon-caso-3.png" alt="" width="100%">
+                    </div>
+                    <span class="caso-num">Caso #3</span>
+                </div>
+                <div class="caso-meta">
+                    <h2 class="caso-name">Yaiselis Rondón</h2>
+                    <p class="caso-city">Lima, Perú</p>
+                    <div class="caso-fields">
+                        <div class="caso-field">
+                            <span class="caso-field-label">Situación en el sistema:</span>
+                            <span class="caso-field-value">Desabastecimiento de medicamentos</span>
+                        </div>
+                        <div class="caso-field">
+                            <span class="caso-field-label">Enfermedad:</span>
+                            <span class="caso-field-value">Hipertensión</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="caso-divider">
+                <div class="caso-body">
+                    <p class="caso-text"><strong>Yaiselis Rondón</strong> tiene 38 años e hipertensión. Durante meses, EsSalud no tuvo Losartán, el  medicamento que necesita para vivir y que en la farmacia privada puede llegar a costar más de 100 soles. La Defensoría del Pueblo registró la escasez, sin obtener una respuesta.</p>
+                </div>
+                <div class="caso-footer">
+                    <button class="caso-btn js-audio-toggle">Escuchar más</button>
+                    <div class="caso-audio-wrap" hidden>
+                        <audio class="caso-audio-el" preload="none" src="./audio/audio-yaiselis-rondon.mp3"></audio>
+                        <div class="ap-row">
+                            <button class="ap-play-btn js-ap-play" aria-label="Reproducir">
+                                <svg class="icon-play" viewBox="0 0 20 20" width="13" height="13"><polygon points="4,2 18,10 4,18" fill="currentColor"/></svg>
+                                <svg class="icon-pause" viewBox="0 0 20 20" width="13" height="13" hidden><rect x="3" y="2" width="5" height="16" fill="currentColor"/><rect x="12" y="2" width="5" height="16" fill="currentColor"/></svg>
+                            </button>
+                            <div class="ap-progress-wrap">
+                                <input type="range" class="ap-range js-ap-range" min="0" max="100" value="0" step="0.1">
+                                <div class="ap-times">
+                                    <span class="js-ap-current">0:00</span>
+                                    <span class="js-ap-duration">–:––</span>
+                                </div>
+                            </div>
+                            <button class="ap-close-btn js-ap-close" aria-label="Cerrar">
+                                <svg viewBox="0 0 20 20" width="12" height="12"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Caso 4 -->
+            <article class="caso-card">
+                <div class="caso-top">
+                    <div class="caso-icon">
+                        <img src="./img/icon-caso-4.png" alt="" width="100%">
+                    </div>
+                    <span class="caso-num">Caso #4</span>
+                </div>
+                <div class="caso-meta">
+                    <h2 class="caso-name">Eduardo Ramírez</h2>
+                    <p class="caso-city">Lima, Perú</p>
+                    <div class="caso-fields">
+                        <div class="caso-field">
+                            <span class="caso-field-label">Situación en el sistema:</span>
+                            <span class="caso-field-value">Emergencia sin quirófano disponible</span>
+                        </div>
+                        <div class="caso-field">
+                            <span class="caso-field-label">Enfermedad:</span>
+                            <span class="caso-field-value">Apendicitis aguda</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="caso-divider">
+                <div class="caso-body">
+                    <p class="caso-text"><strong>Eduardo Ramírez,</strong> llegó a emergencias con apendicitis aguda. Le dijeron que necesitaba operarse de inmediato, pero demoraron en atenderlo y su apéndice reventó. Pasó tres días en UCI y perdió su trabajo durante la recuperación.</p>
+                </div>
+                <div class="caso-footer">
+                    <button class="caso-btn js-audio-toggle">Escuchar más</button>
+                    <div class="caso-audio-wrap" hidden>
+                        <audio class="caso-audio-el" preload="none" src="./audio/audio-eduardo-ramirez.mp3"></audio>
+                        <div class="ap-row">
+                            <button class="ap-play-btn js-ap-play" aria-label="Reproducir">
+                                <svg class="icon-play" viewBox="0 0 20 20" width="13" height="13"><polygon points="4,2 18,10 4,18" fill="currentColor"/></svg>
+                                <svg class="icon-pause" viewBox="0 0 20 20" width="13" height="13" hidden><rect x="3" y="2" width="5" height="16" fill="currentColor"/><rect x="12" y="2" width="5" height="16" fill="currentColor"/></svg>
+                            </button>
+                            <div class="ap-progress-wrap">
+                                <input type="range" class="ap-range js-ap-range" min="0" max="100" value="0" step="0.1">
+                                <div class="ap-times">
+                                    <span class="js-ap-current">0:00</span>
+                                    <span class="js-ap-duration">–:––</span>
+                                </div>
+                            </div>
+                            <button class="ap-close-btn js-ap-close" aria-label="Cerrar">
+                                <svg viewBox="0 0 20 20" width="12" height="12"><line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            </div><!-- /casos-viewport -->
+            <button class="casos-arrow casos-next" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div><!-- /casos-inner -->
     </section>
 
     <!-- ══════════════════════════════════════════════════════
@@ -789,15 +769,15 @@
 
     <div class="box-texto">
         <p>
-            <span>En el Hospital San Juan de Lurigancho, conseguir una cita con un especialista puede tomar hasta 57 días. </span> En el Hospital de Pichanaki, en Junín, esperar sentado el día de tu cita significa quedarte ahí más de tres horas. Son datos del propio MINSA, medidos en 2025, en establecimientos de Lima y regiones. 
+            En el Hospital San Juan de Lurigancho, conseguir una cita con un especialista puede tardar <span>hasta 57 días</span>. En el Hospital de Pichanaki (Junín), el día de tu cita implica esperar <span>sentado más de tres</span> horas para ser llamado. Son datos del propio MINSA (2025) que confirman que la demora no es una percepción, es la norma.
         </p>
         <p>
-            El diferimiento <span> — el tiempo promedio entre que pides una cita y te atienden — es de 23 días en EsSalud a nivel nacional.</span> En algunas redes regionales supera el mes.
+            <span>El diferimiento</span> —el tiempo entre que pides la cita y te atienden— promedia los <span>23 días en EsSalud</span> a nivel nacional, aunque en regiones suele superar el mes. 
         </p>
 
-        <h4>La espera no termina con la cita en el MINSA</h4>
+        <h4>La espera no termina en el consultorio </h4>
         <p>
-            <span>Esperar para ver al médico es solo el primer obstáculo. Después vienen las imágenes, el laboratorio, la farmacia</span> — cada uno con su propia cola. Estos cuatro datos muestran que la demora no está en un solo punto del Minsa: está en todos.
+            Ver al médico es solo el primer obstáculo. Luego comienza el laberinto de las colas: laboratorio, imágenes y farmacia. Estos cuatro indicadores demuestran que en el MINSA la demora no es un evento aislado: es una falla sistémica.
         </p>
     </div>
 
@@ -876,15 +856,13 @@
                     <p class="ec-nota">Lima concentra los peores tiempos en varios servicios a la vez.</p>
                 </div>
             </div>
-        </div>
-
-        <div class="box-fuente">
-            <p>
-                <span>Fuente: </span> Minsa
-            </p>
-        </div>
-
+        </div> 
     </div>    
+    <div class="box-fuente">
+        <p>
+            <span>Fuente: </span> Ministerio de Salud (MINSA). Datos correspondientes al año 2025.
+        </p>
+    </div>
 
     <!-- ══════════════════════════════════════════════════════
          MAPA · TIEMPOS DE ATENCIÓN
@@ -892,23 +870,23 @@
     <section class="mapa-section" id="mapaTiempos">
         <div class="mapa-inner">
 
-            <h2 class="mapa-titulo">¿Cuándo podrás ser atendido en EsSalud?</h2>
+            <h2 class="mapa-titulo">¿Cuánto tarda tu cita en EsSalud?</h2>
 
             <div class="box-texto">
                 <p>
-                    La herramienta que sigue muestra datos registrados: cuántos días esperas en promedio para conseguir una cita, según la región, el prestador de servicio y la especialidad.
+                    Encuentra aquí el tiempo real de espera basado en datos oficiales. Selecciona tu región y la especialidad médica para conocer cuántos días toma, en promedio, conseguir una cita en tu red asistencial.
                 </p>
             </div>
 
             <div class="mapa-filtros">
                 <div class="mapa-filtro">
-                    <label class="mapa-label" for="mapaRegion">Selecciona región</label>
+                    <label class="mapa-label" for="mapaRegion">Busca tu región</label>
                     <select class="mapa-select" id="mapaRegion">
                         <option value="">— Selecciona —</option>
                     </select>
                 </div>
                 <div class="mapa-filtro">
-                    <label class="mapa-label" for="mapaEsp">Selecciona especialidad</label>
+                    <label class="mapa-label" for="mapaEsp">Selecciona tu especialidad</label>
                     <select class="mapa-select" id="mapaEsp" disabled>
                         <option value="">— Selecciona región primero —</option>
                     </select>
@@ -920,13 +898,13 @@
                     <!-- SVG cargado por JS -->
                 </div>
                 <div class="mapa-resultado" id="mapaResultado">
-                    <p class="mapa-placeholder">Selecciona una región y especialidad<br>para ver los tiempos de espera.</p>
+                    <p class="mapa-placeholder">Haz clic en el mapa <br> o usa los filtros para empezar.</p>
                 </div>
             </div>
 
             <div class="box-fuente">
                 <p>
-                    <span>Fuente: </span> EsSalud
+                    <span>Fuente: </span> Elaboración propia con datos de EsSalud, 2025.
                 </p>
             </div>
 
@@ -951,10 +929,13 @@
 
     <div class="box-texto">
         <p>
-            <span>El SIS atendió a casi 20 millones de peruanos el último año; EsSalud, a poco más de 850 mil.</span> Eso significa que el seguro público —el de menor presupuesto por persona— carga con más del 95% de los atendidos en el sistema. A quién te atiende depende, en el Perú, del tipo de trabajo que realizas.
+            El último año, el SIS atendió a casi <span>20 millones de peruanos en consultas externas:</span> la primera cita médica cotidiana que recibe un paciente por una enfermedad, problema o diagnóstico específico como el control prenatal, la consulta por diabetes, el chequeo del niño. Incluso pacientes con EsSalud, seguros privados o de las Fuerzas Armadas terminaron en la red del SIS por diversas razones. Esto convierte al seguro con el presupuesto más bajo por persona en el verdadero sostén de la salud pública del país. En el Perú, quién te atiende sigue dependiendo de tu situación laboral.
         </p>
         <p>
-            <span>Los adultos de 30 a 59 años concentran la mayor parte de las atenciones.</span> Pero hay un dato que duele más: por cada niño menor de un año que atiende EsSalud, el SIS atiende a 13. Quién atiende a quién y quién se queda fuera.
+            <span>La brecha que marca el inicio de la vida</span>
+        </p>
+        <p>
+            Aunque los adultos de 30 a 59 años concentran la mayor parte de las atenciones, hay un dato que duele: por cada niño menor de un año que atiende EsSalud, el SIS atiende a 13. Una desigualdad que marca el destino de los peruanos desde su primer día de vida.
         </p>
     </div>
 
@@ -963,10 +944,12 @@
         <button class="mayte-close" id="mayteClose5" aria-label="Cerrar">✕</button>
         <div class="mayte-card">
             <div class="mayte-card-body">
-                <h4 class="mayte-titulo">Mayté explica</h4>
+                <h4 class="mayte-titulo">Ana explica</h4>
                 <img src="./img/mayte.png" alt="Mayté">
                 <hr class="mayte-hr">
-                <p class="mayte-texto">Atendidos y atenciones no son lo mismo. Una persona puede ir al médico varias veces cada visita cuenta como una atención distinta. En total, en el 2025, el sistema registró casi 118 millones de atenciones, pero eso no significa que llegó a 118 millones de personas diferentes.</p>
+                <p class="mayte-texto">
+                    Es importante diferenciar: una persona es un <strong>atendido</strong>, pero cada visita al médico es una <strong>atención</strong>. En 2025, el sistema registró <strong>118 millones de atenciones.</strong> Esto no significa que se atendió a tres veces la población del Perú, sino que los pacientes (atendidos) tuvieron que acudir varias veces al año para completar sus procesos médicos.
+                </p>
             </div>
         </div>
     </div>
@@ -978,7 +961,10 @@
         <div class="es-sticky">
 
             <header class="es-header">                
-                <h2 class="es-title">¿Cuántas personas atiende cada prestador de salud?</h2>               
+                <h2 class="es-title">La salud del día a día: ¿Quiénes acceden a una cita médica?</h2>    
+                <p style="font: 1rem / 1.65 'Isidora Medium', sans-serif; text-align: center; max-width: 520px; margin: 10px auto;">
+                    Cifras corresponden a personas únicas que recibieron al menos una consulta externa (atención preventiva y ambulatoria) durante el año.
+                </p>           
                 <span class="es-note" id="esNote">Cada figura ≈ 10 000 personas</span>
             </header>
 
@@ -1048,10 +1034,10 @@
 
     <div class="box-texto">
         <p>
-            <span>La enfermedad más común en el Perú no es el cáncer ni la diabetes: es la faringitis aguda, con más de 4 millones de casos en 2024.</span> Le sigue la caries dental, con casi 4 millones. Dos enfermedades perfectamente prevenibles que saturan un sistema que debería estar ocupándose de casos más complejos.
+            La enfermedad más común en el Perú no es el cáncer ni la diabetes: es la faringitis aguda, con más de 5.3 millones de casos en 2024. Le sigue la caries dental, con 5 millones. Dos enfermedades perfectamente prevenibles que saturan un sistema que debería estar ocupándose de casos más complejos. La obesidad ocupa el tercer lugar con 3.4 millones de casos. 
         </p>
         <p>
-            <span>La obesidad ocupa el cuarto lugar con 3.4 millones de casos, y la dorsalgia —el dolor de espalda— el quinto con 2.1 millones.</span> El patrón es claro: las enfermedades que más aquejan a los peruanos son crónicas, prevenibles y directamente vinculadas a un primer nivel de atención que no funciona.
+            El patrón es claro: las enfermedades que más aquejan a los peruanos son crónicas, prevenibles y directamente vinculadas a un primer nivel de atención que no funciona.
         </p>
     </div>
 
@@ -1063,7 +1049,7 @@
         <div class="flourish-embed flourish-chart" data-src="visualisation/25923553"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/25923553/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
         <div class="box-fuente fuente-atendidos">
             <p>
-                <span>Fuente: </span> Reunis y CDC
+                <span>Fuente: </span> Elaboración propia basada en microdatos del Reunis y el CDC (Centro Nacional de Epidemiología, Prevención y Control de Enfermedades - Minsa), 2025.
             </p>
         </div>
     </div>
@@ -1088,13 +1074,16 @@
 
     <div class="box-texto">
         <p>
-            <span>La mayoría de hospitales públicos del Perú tiene más de 40 años de antigüedad.</span> Fueron construidos con normas sísmicas hoy obsoletas, ampliados sin planificación y mantenidos a medias. El resultado: casi 9 de cada 10 hospitales de segundo y tercer nivel opera con infraestructura inadecuada.
+            La mayoría de hospitales públicos del Perú tiene más de 40 años de antigüedad. Fueron construidos con normas sísmicas hoy obsoletas, ampliados sin planificación y mantenidos a medias. El resultado: casi 9 de cada 10 hospitales de segundo y tercer nivel opera con infraestructura inadecuada. 
         </p>
         <p>
-            <span>La brecha no es uniforme. Amazonas, Ancash, Apurímac, Callao, Cusco y Tumbes tienen el 100% de sus hospitales en condición inadecuada.</span> Solo San Martín e Ica muestran cifras algo menores. 
+            La brecha es absoluta en el interior del país. Amazonas, Áncash, Apurímac, Callao, Cusco y Tumbes tienen el 100% de sus hospitales en condición inadecuada. Solo San Martín e Ica muestran cifras ligeramente menores. 
         </p>
         <p>
-            <span>El primer nivel no está mejor. De las más de 9,200 postas y centros de salud del país, el 95.89% no tiene las condiciones mínimas para funcionar: les falta equipamiento, infraestructura en buen estado o ambas cosas a la vez. </span> Pasco, Madre de Dios y Junín tienen prácticamente la totalidad de sus establecimientos en esa situación. Son la puerta de entrada al sistema —y están rotos antes de que alguien toque el timbre.
+            <span>El primer nivel: Roto antes de entrar</span>
+        </p>
+        <p>
+            La base del sistema es la más afectada. De las más de 9,200 postas y centros de salud del país, el 95.89% no tiene las condiciones mínimas para funcionar: les falta equipamiento, infraestructura en buen estado o ambas cosas a la vez. En regiones como Pasco, Madre de Dios y Junín, la precariedad es total. Son la puerta de entrada al sistema, pero están rotos antes de que alguien toque el timbre.
         </p>
     </div>
 
@@ -1122,6 +1111,73 @@
             <div class="ctn-box-title">
                 <h3>que falta <img src="./img/marca-seccion-7.png" alt="" width="100%" class="marca-seccion-7"></h3>
             </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         DATOS · SLIDER
+    ══════════════════════════════════════════════════════ -->
+    <section class="datos-slider">
+        <div class="ds-inner">
+            <button class="ds-arrow ds-prev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="ds-viewport">
+
+                <!-- Slide 1 -->
+                <div class="ds-slide is-active">
+                    <div class="ds-text">
+                        <h3>Personal</h3>
+                        <p><strong>4 de cada 100 oncólogos del MINSA trabajan en establecimientos de primer nivel.</strong> El 77% está concentrado en institutos especializados de tercer nivel — lejos de donde vive la mayoría de pacientes con cáncer.</p>
+                    </div>
+                    <div class="ds-img">
+                        <img src="./img/bg-slide-1.jpg" alt="Ilustración de lazo de cáncer" width="100%">
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="ds-slide">
+                    <div class="ds-text">
+                        <h3>Espera</h3>
+                        <p><strong>57 días</strong> es el tiempo máximo registrado para conseguir una cita con especialista en el Hospital San Juan de Lurigancho. El promedio nacional de diferimiento en EsSalud es de 16 días — pero en algunas redes regionales supera el mes.</p>
+                    </div>
+                    <div class="ds-img">
+                        <img src="./img/bg-slide-2.jpg" alt="Ilustración de calendario" width="100%">
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="ds-slide">
+                    <div class="ds-text">
+                        <h3>Mortalidad materna</h3>
+                        <p><strong>194 muertes</strong> por cada 100,000 nacidos vivos ocurren en Loreto — casi 7 veces más que en Lima (28) y casi 3 veces la meta que el Perú se comprometió a alcanzar en 2030 con los ODS.</p>
+                    </div>
+                    <div class="ds-img">
+                        <img src="./img/bg-slide-3.jpg" alt="Ilustración de corazón con bebé" width="100%">
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="ds-slide">
+                    <div class="ds-text">
+                        <h3>Salud mental</h3>
+                        <p><strong>1 psiquiatra</strong> por cada 100,000 habitantes hay en promedio fuera de Lima. En Puno, la región con más intentos de suicidio registrados per cápita, hay 0.36 psiquiatras por cada 100,000 habitantes.</p>
+                    </div>
+                    <div class="ds-img">
+                        <img src="./img/bg-slide-4.jpg" alt="Ilustración de mente" width="100%">
+                    </div>
+                </div>
+
+            </div>
+            <button class="ds-arrow ds-next" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+
+        <div class="box-fuente fuente-atendidos">
+            <p>
+                <span>Fuente: </span> Elaboración propia basada en microdatos del Reunis, CDC Perú e INEI (2025).
+            </p>
         </div>
     </section>
 
@@ -1158,7 +1214,7 @@
         <div class="evz-pips" id="evzPips"></div>
         <div class="box-fuente fuente-atendidos">
             <p>
-                <span>Fuente: </span> Minsa, Reunis, INEI y CDC
+                <span>Fuente: </span> Elaboración propia basada en microdatos del Reunis, CDC Perú e INEI (2025).
             </p>
         </div>
     </section>
@@ -1295,7 +1351,8 @@
         <iframe id="desabastecimientoIframe" src="./graficos/desabastecimiento_tabla_contexto.html" width="100%" height="1700" frameborder="0" scrolling="no" title="Desabastecimiento de medicamentos por región"></iframe>
         <div class="box-fuente fuente-atendidos" style="margin-top: 20px;">
             <p>
-                <span>Fuente: </span> Reunis
+                <span>Fuente: </span> Repositorio Único Nacional de Información de Salud (Reunis). Datos correspondientes a enero 2026.
+
             </p>
         </div>
     </div>
@@ -1341,8 +1398,7 @@
             </div>
 
             <div class="voz-content">
-                <h3 class="voz-titulo">&ldquo;El sistema que merecemos&rdquo;</h3>
-                <p class="voz-meta">Narrativa: volver a la voz de Mar&iacute;a, ahora real (audio de paciente real).</p>
+                <h3 class="voz-titulo">&ldquo;El sistema que merecemos&rdquo;</h3>                
                 <blockquote class="voz-quote">&ldquo;En un pa&iacute;s donde enfermarse es esperar, la salud sigue siendo un privilegio. Y eso no es inevitable &ndash; es una decisi&oacute;n que se toma cada vez que se aprueba un presupuesto.&rdquo;</blockquote>
                 <div class="voz-audio-wrap">
                     <audio class="voz-audio-el" preload="none" src="./audio/audio-final.mp3"></audio>
@@ -1873,7 +1929,7 @@
         const healthStats = [
             {
                 title: 'Primer nivel debilitado',
-                text: 'Más del 95% de los establecimientos de salud del primer nivel operan con capacidad instalada inadecuada',
+                text: '¿Cómo debería ser nuestro sistema de salud?',
                 image: './img/bg-stats-1.gif',
                 imageMobile: './img/bg-stats-1-movil.gif'
             },
@@ -2733,13 +2789,48 @@
     </script>
 
     <!-- ══════════════════════════════════════════════════════
-         SCRIPT · CASOS (drag scroll + audio players)
+         SCRIPT · CASOS (slider + audio players)
     ══════════════════════════════════════════════════════ -->
     <script>
     (function () {
         const track   = document.getElementById('casosTrack');
         const section = document.getElementById('casosSection');
         if (!track || !section) return;
+
+        /* ── SLIDER ───────────────────────────────────────── */
+        const cards   = Array.from(track.querySelectorAll('.caso-card'));
+        const prevBtn = section.querySelector('.casos-prev');
+        const nextBtn = section.querySelector('.casos-next');
+        let cur = 0;
+
+        function updateNav() {
+            if (prevBtn) prevBtn.style.visibility = cur === 0 ? 'hidden' : '';
+            if (nextBtn) nextBtn.style.visibility = cur === cards.length - 1 ? 'hidden' : '';
+        }
+
+        function go(n) {
+            n = Math.max(0, Math.min(n, cards.length - 1));
+            if (n === cur) return;
+            const leaving = cards[cur];
+            const audio = leaving.querySelector('.caso-audio-el');
+            if (audio && !audio.paused) audio.pause();
+            leaving.classList.remove('is-active');
+            cur = n;
+            cards[cur].classList.add('is-active');
+            updateNav();
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => go(cur - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => go(cur + 1));
+
+        let tx = 0;
+        track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend',   e => {
+            const diff = tx - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) go(diff > 0 ? cur + 1 : cur - 1);
+        }, { passive: true });
+
+        updateNav();
 
         /* ── HELPERS ──────────────────────────────────────── */
         function fmt(s) {
