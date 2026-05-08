@@ -49,9 +49,89 @@ html {
     font-weight: 900;
 }
 
+@font-face {
+    font-family: 'Bobby Jones Condensed';
+    src: url('../fonts/BobbyJones-Condensed.woff2') format('woff2'),
+        url('../fonts/BobbyJones-Condensed.woff') format('woff');
+    font-weight: normal;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     overflow-x: hidden;
+}
+
+section.inicio {
+    background: url('../img/bg-pantalla-inicio.jpg') no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.inicio-dots {
+    background-image: radial-gradient(circle, #5ecece 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+    height: 55%;
+    left: 0;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%);
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.inicio-content {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 28px;
+    justify-content: center;
+    padding: 60px 20px 80px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.inicio-logo {
+    max-width: 400px;
+    width: 70%;
+}
+
+.inicio-sub {
+    color: #1a1a1a;
+    font: 2rem/1.4 'Bobby Jones Condensed';
+}
+.inicio-sub span {
+    color: #ff501c;
+}
+
+.inicio-scroll {
+    align-items: center;
+    color: #ff501c;
+    display: flex;
+    flex-direction: column;
+    font: 1rem/1 'Bobby Jones Condensed';
+    gap: 8px;
+    margin-top: 20px;
+}
+.inicio-scroll svg {
+    animation: introArrow 1.4s ease-in-out infinite;
+    color: #1a1a1a;
+}
+
+@keyframes introArrow {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(6px); }
+}
+
+@media (max-width: 767px) {
+    .inicio-logo { width: 85%; }
+    .inicio-sub  { font-size: 1.1rem; }
 }
 
         /* Contenedor con altura ajustable para controlar la velocidad del scroll */
@@ -286,7 +366,7 @@ body {
             }
 
             .loading-stat {
-                font-size: clamp(1rem, 4vw, 1.25rem);
+                font-size: clamp(1.5rem, 4vw, 1.25rem);
             }
 
             .loading-bar {
@@ -892,16 +972,46 @@ section.section-title{
     object-fit: contain;
 }
 
+.ds-dots {
+    display: none;
+}
+
 @media (max-width: 767px) {
     .datos-slider { padding: 40px 0; }
     .ds-inner { max-width: 100%; padding: 0 4px; }
-    .ds-arrow { padding: 10px 12px; }
+    .ds-arrow { display: none; }
     .ds-slide { flex-direction: column; gap: 16px; }
     .ds-text { flex: none; padding: 0 16px; width: 100%; }
     .ds-text h3 { font-size: 2rem; margin-bottom: 14px; }
     .ds-text p { font-size: 1rem; }
     .ds-img { flex: none; padding: 0 20px; width: 100%; }
     .ds-img img { max-height: 200px; }
+
+    .ds-dots {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 16px;
+        padding-bottom: 4px;
+    }
+    .ds-dot {
+        background: #ccc;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        height: 8px;
+        padding: 0;
+        transition: background 0.25s, transform 0.25s;
+        width: 8px;
+    }
+    .ds-dot.is-active {
+        background: #f04f26;
+        transform: scale(1.35);
+    }
+
+    .box-fuente p{
+        padding: 0 10px;
+    }
 }
 
 /* ══════════════════════════════════════════════════════

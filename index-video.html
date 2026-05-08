@@ -41,6 +41,21 @@
         </div>
     </div>
 
+    <!-- ══════════════════════════════════════════════════════
+         INTRO · SPLASH
+    ══════════════════════════════════════════════════════ -->
+    <section class="inicio" id="introSplash">
+        <div class="inicio-content">
+            <img src="./img/logo-salud-en-espera.png" alt="Salud en Espera" class="inicio-logo">
+            <p class="inicio-sub">Proyectando la atención <span>que todos merecemos…</span></p>
+            <div class="inicio-scroll">
+                <span>Scroll para interactuar</span>
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </div>
+        </div>
+    </section>
+
+
     <!-- ── HERO: Contenedor del video con scroll ───────────── -->
     <div class="video-scroll-container" id="scrollContainer">
         <div class="video-sticky">
@@ -1173,6 +1188,7 @@
                 <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
         </div>
+        <div class="ds-dots" aria-hidden="true"></div>
 
         <div class="box-fuente fuente-atendidos">
             <p>
@@ -2756,9 +2772,24 @@
         const prevBtn = document.querySelector('.ds-prev');
         const nextBtn = document.querySelector('.ds-next');
         const vp      = document.querySelector('.ds-viewport');
+        const dotsEl  = document.querySelector('.ds-dots');
         if (!slides.length) return;
 
         let cur = 0;
+
+        /* ── Bullets ─────────────────────────────────────── */
+        const dots = slides.map((_, i) => {
+            const b = document.createElement('button');
+            b.className = 'ds-dot' + (i === 0 ? ' is-active' : '');
+            b.setAttribute('aria-label', 'Slide ' + (i + 1));
+            b.addEventListener('click', () => go(i));
+            dotsEl.appendChild(b);
+            return b;
+        });
+
+        function updateDots() {
+            dots.forEach((d, i) => d.classList.toggle('is-active', i === cur));
+        }
 
         function updateNav() {
             prevBtn.style.visibility = cur === 0 ? 'hidden' : '';
@@ -2772,6 +2803,7 @@
             cur = n;
             slides[cur].classList.add('is-active');
             updateNav();
+            updateDots();
         }
 
         prevBtn.addEventListener('click', () => go(cur - 1));
