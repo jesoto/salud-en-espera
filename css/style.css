@@ -860,7 +860,7 @@ section.section-title{
 
 .ds-text {
     flex: 0 0 50%;
-    padding: 0 40px;
+    padding: 0;
     text-align: center;
 }
 
@@ -876,7 +876,7 @@ section.section-title{
 }
 .ds-text p strong { 
     font-family: 'Isidora Bold', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .ds-img {
