@@ -62,7 +62,7 @@ body {
 }
 
 section.inicio {
-    background: url('../img/bg-pantalla-inicio.jpg') no-repeat center;
+    background: url('../img/bg-pantalla-inicio.jpg?v2') no-repeat center;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -1590,6 +1590,10 @@ span.separador {
     margin: 0 0 22px;
     padding: 10px;
 }
+    .voz-quote span{
+        display: block;
+        font-size: 1.1rem;
+    }
 .voz-audio-wrap {
     background: #eeecea;
     border-radius: 8px;
