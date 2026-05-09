@@ -67,6 +67,9 @@
                 crossorigin="anonymous"
             >
                 <source
+                    id="videoSource"
+                    data-src-desktop="https://res.cloudinary.com/dvcf0htuf/video/upload/q_auto,vc_h264/v1775504906/video-intro_bmvmnq.mp4"
+                    data-src-mobile="REEMPLAZA_CON_URL_VIDEO_MOVIL"
                     src="https://res.cloudinary.com/dvcf0htuf/video/upload/q_auto,vc_h264/v1775504906/video-intro_bmvmnq.mp4"
                     type="video/mp4"
                 >
@@ -1922,6 +1925,19 @@
             seekThreshold: 0.08,
             requiredBuffer: 3,
         };
+
+        /* ─────────────────────────────────────────────
+           VIDEO SOURCE: desktop vs móvil
+        ───────────────────────────────────────────── */
+        (function () {
+            const source = document.getElementById('videoSource');
+            if (!source) return;
+            const isMobile = window.innerWidth < 768;
+            const url = isMobile
+                ? source.getAttribute('data-src-mobile')
+                : source.getAttribute('data-src-desktop');
+            if (url) source.setAttribute('src', url);
+        })();
 
         /* ─────────────────────────────────────────────
            REFERENCIAS DOM
